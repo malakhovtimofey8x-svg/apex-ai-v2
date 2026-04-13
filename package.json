@@ -1,0 +1,9 @@
+{
+  "name": "apex-ai-task-prioritizer",
+  "version": "1.0.0",
+  "description": "AI task prioritizer with secure Anthropic proxy",
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  }
+}
