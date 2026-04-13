@@ -596,7 +596,7 @@ priority_score = (urgency * 0.5) + (impact * 0.35) - (effort * 0.15)
 Return ONLY valid JSON array, absolutely nothing else, no markdown fences:
 [{"name":"task name","urgency":80,"impact":70,"effort":40,"priority_score":79,"reason":"one sentence explanation"}]`;
 
-    const res = await fetch("/.netlify/functions/chat", {
+    const res = await fetch("/api/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
