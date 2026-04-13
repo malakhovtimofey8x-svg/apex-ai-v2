@@ -600,7 +600,7 @@ Return ONLY valid JSON array, absolutely nothing else, no markdown fences:
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        model: "claude-sonnet-4-5-20251101",
+        model: "claude-sonnet-4-5",
         max_tokens: 1000,
         messages: [{ role: "user", content: prompt }]
       })
