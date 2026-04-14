@@ -382,6 +382,74 @@ textarea:focus{border-color:var(--mode-border);box-shadow:inset 0 2px 8px rgba(0
 .week-event.priovra-task{background:var(--mode-dim);border-left-color:var(--mode-color);color:var(--mode-color);}
 .week-event.suggested{background:rgba(0,232,160,0.12);border-left-color:#00e8a0;color:#00e8a0;}
 
+
+/* ══ STUDY MODE FEATURES ══ */
+.subject-tag{display:inline-flex;align-items:center;gap:5px;font-family:'Exo 2',sans-serif;font-size:10px;font-weight:600;padding:2px 9px;border-radius:99px;border:1px solid rgba(255,255,255,0.12);cursor:pointer;transition:all 0.15s;white-space:nowrap;}
+.subject-tag:hover{opacity:0.8;}
+.subject-math{background:rgba(79,159,255,0.15);color:#4f9fff;border-color:rgba(79,159,255,0.3);}
+.subject-science{background:rgba(0,232,160,0.12);color:#00e8a0;border-color:rgba(0,232,160,0.28);}
+.subject-english{background:rgba(240,160,48,0.12);color:#f0a030;border-color:rgba(240,160,48,0.28);}
+.subject-history{background:rgba(212,83,126,0.12);color:#d4537e;border-color:rgba(212,83,126,0.28);}
+.subject-other{background:rgba(136,135,128,0.15);color:#b4b2a9;border-color:rgba(136,135,128,0.25);}
+.impact-bar-wrap{display:flex;align-items:center;gap:8px;margin-top:6px;}
+.impact-label{font-family:'Orbitron',sans-serif;font-size:7px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);white-space:nowrap;}
+.impact-pips{display:flex;gap:3px;}
+.impact-pip{width:14px;height:14px;border-radius:3px;border:1px solid rgba(255,255,255,0.12);cursor:pointer;transition:all 0.15s;background:rgba(15,32,39,0.8);}
+.impact-pip.active-1,.impact-pip.active-2{background:#4f9fff;border-color:rgba(79,159,255,0.5);}
+.impact-pip.active-3,.impact-pip.active-4{background:#f0a030;border-color:rgba(240,160,48,0.5);}
+.impact-pip.active-5{background:#ff6b6b;border-color:rgba(255,107,107,0.5);}
+.spaced-rep-banner{display:flex;align-items:center;justify-content:space-between;background:rgba(79,159,255,0.08);border:1px solid rgba(79,159,255,0.2);border-radius:var(--radius);padding:10px 14px;margin-top:8px;gap:10px;}
+.spaced-rep-text{font-family:'Exo 2',sans-serif;font-size:12px;color:var(--text-dim);line-height:1.5;}
+.spaced-rep-btn{font-family:'Orbitron',sans-serif;font-size:7px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:6px 12px;border-radius:8px;border:none;background:rgba(79,159,255,0.2);border:1px solid rgba(79,159,255,0.35);color:#4f9fff;cursor:pointer;white-space:nowrap;transition:all 0.15s;}
+.spaced-rep-btn:hover{background:rgba(79,159,255,0.3);}
+.subject-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:8px;margin-bottom:24px;}
+.subject-stat-card{background:linear-gradient(145deg,rgba(44,83,100,0.55),rgba(32,58,67,0.38));border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius);padding:12px;text-align:center;}
+.subject-stat-num{font-size:22px;font-weight:700;color:var(--mode-color);margin-bottom:2px;}
+.subject-stat-label{font-family:'Exo 2',sans-serif;font-size:11px;color:var(--text-muted);}
+
+/* ══ WORK MODE FEATURES ══ */
+.client-tag{display:inline-flex;align-items:center;gap:5px;font-family:'Exo 2',sans-serif;font-size:10px;font-weight:600;padding:2px 9px;border-radius:99px;background:rgba(240,160,48,0.12);color:#f0a030;border:1px solid rgba(240,160,48,0.28);cursor:pointer;white-space:nowrap;transition:all 0.15s;}
+.client-tag:hover{opacity:0.8;}
+.pressure-gauge{margin-bottom:24px;background:linear-gradient(145deg,rgba(44,83,100,0.55),rgba(32,58,67,0.38));border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius-lg);padding:18px 20px;}
+.pressure-gauge-label{font-size:8px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--mode-color);margin-bottom:12px;}
+.pressure-track{height:8px;background:rgba(0,0,0,0.3);border-radius:99px;overflow:hidden;margin-bottom:8px;border:1px solid rgba(255,255,255,0.05);}
+.pressure-fill{height:100%;border-radius:99px;transition:width 0.6s ease;position:relative;}
+.pressure-fill::after{content:'';position:absolute;top:0;left:0;right:0;height:50%;background:rgba(255,255,255,0.3);border-radius:99px;}
+.pressure-low .pressure-fill{background:linear-gradient(90deg,#00e8a0,#00b880);box-shadow:0 0 8px rgba(0,232,160,0.4);}
+.pressure-med .pressure-fill{background:linear-gradient(90deg,#f0a030,#e08020);box-shadow:0 0 8px rgba(240,160,48,0.4);}
+.pressure-high .pressure-fill{background:linear-gradient(90deg,#ff6b6b,#cc3333);box-shadow:0 0 8px rgba(255,107,107,0.4);}
+.pressure-desc{font-family:'Exo 2',sans-serif;font-size:12px;color:var(--text-dim);}
+.client-filter-bar{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px;}
+.client-filter-pill{font-family:'Exo 2',sans-serif;font-size:11px;padding:4px 12px;border-radius:99px;border:1px solid rgba(255,255,255,0.1);background:none;color:var(--text-muted);cursor:pointer;transition:all 0.15s;}
+.client-filter-pill:hover{border-color:var(--mode-border);color:var(--mode-color);}
+.client-filter-pill.active{background:var(--mode-dim);border-color:var(--mode-border);color:var(--mode-color);}
+.weekly-summary-btn{display:flex;align-items:center;gap:8px;background:none;border:1px solid var(--border);color:var(--text-muted);font-family:'Orbitron',sans-serif;font-size:8px;font-weight:600;letter-spacing:0.14em;padding:7px 13px;border-radius:var(--radius);cursor:pointer;transition:all 0.15s;text-transform:uppercase;}
+.weekly-summary-btn:hover{border-color:var(--mode-border);color:var(--mode-color);background:var(--mode-dim);}
+
+/* ══ LIFE MODE FEATURES ══ */
+.energy-bar{display:flex;gap:6px;margin-bottom:24px;align-items:center;}
+.energy-label{font-family:'Orbitron',sans-serif;font-size:8px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-muted);margin-right:4px;white-space:nowrap;}
+.energy-btn{flex:1;padding:9px 0;border-radius:var(--radius);border:1px solid rgba(255,255,255,0.1);background:linear-gradient(145deg,rgba(15,32,39,0.8),rgba(32,58,67,0.5));font-family:'Orbitron',sans-serif;font-size:8px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:all 0.15s;text-align:center;}
+.energy-btn:hover{border-color:var(--mode-border);}
+.energy-btn.active-high{background:linear-gradient(145deg,rgba(0,232,160,0.2),rgba(0,180,140,0.1));border-color:rgba(0,232,160,0.4);color:#00e8a0;box-shadow:0 0 12px rgba(0,232,160,0.15);}
+.energy-btn.active-med{background:linear-gradient(145deg,rgba(240,160,48,0.18),rgba(200,120,20,0.1));border-color:rgba(240,160,48,0.4);color:#f0a030;box-shadow:0 0 12px rgba(240,160,48,0.15);}
+.energy-btn.active-low{background:linear-gradient(145deg,rgba(79,159,255,0.15),rgba(40,100,180,0.1));border-color:rgba(79,159,255,0.35);color:#4f9fff;box-shadow:0 0 12px rgba(79,159,255,0.12);}
+.goal-tag{display:inline-flex;align-items:center;gap:5px;font-family:'Exo 2',sans-serif;font-size:10px;font-weight:600;padding:2px 9px;border-radius:99px;background:rgba(0,212,232,0.1);color:var(--mode-color);border:1px solid var(--mode-border);cursor:pointer;white-space:nowrap;transition:all 0.15s;}
+.goal-tag:hover{opacity:0.8;}
+.goal-milestones{margin-bottom:24px;}
+.goal-milestone-item{display:flex;align-items:center;gap:12px;padding:10px 14px;background:linear-gradient(145deg,rgba(44,83,100,0.5),rgba(32,58,67,0.35));border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius);margin-bottom:6px;}
+.goal-milestone-bar-wrap{flex:1;height:4px;background:rgba(0,0,0,0.3);border-radius:99px;overflow:hidden;}
+.goal-milestone-bar{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--mode-color),color-mix(in srgb,var(--mode-color) 60%,#fff));transition:width 0.5s ease;}
+.goal-milestone-name{font-family:'Exo 2',sans-serif;font-size:12px;color:var(--text);min-width:80px;}
+.goal-milestone-pct{font-family:'Orbitron',sans-serif;font-size:10px;color:var(--mode-color);min-width:36px;text-align:right;}
+.errand-group{background:linear-gradient(145deg,rgba(44,83,100,0.5),rgba(32,58,67,0.35));border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius);margin-bottom:10px;overflow:hidden;}
+.errand-group-header{display:flex;align-items:center;gap:10px;padding:10px 14px;cursor:pointer;border-bottom:1px solid rgba(255,255,255,0.06);}
+.errand-group-location{font-family:'Orbitron',sans-serif;font-size:9px;font-weight:600;letter-spacing:0.12em;color:var(--mode-color);}
+.errand-group-count{font-family:'Exo 2',sans-serif;font-size:11px;color:var(--text-muted);}
+.errand-group-tasks{padding:8px 14px;}
+.errand-task-row{font-family:'Exo 2',sans-serif;font-size:13px;color:var(--text-dim);padding:4px 0;border-bottom:1px solid rgba(255,255,255,0.04);}
+.errand-task-row:last-child{border-bottom:none;}
+
 </style>
 </head>
 <body>
@@ -455,6 +523,39 @@ textarea:focus{border-color:var(--mode-border);box-shadow:inset 0 2px 8px rgba(0
           <button class="cal-btn cal-btn-connect" id="calActionBtn" onclick="calAction()">Connect Google Calendar</button>
         </div>
       </div>
+      <!-- ── STUDY MODE PANEL ── -->
+      <div id="studyPanel" style="display:none">
+        <div id="subjectStats" class="subject-stats"></div>
+        <div class="client-filter-bar" id="subjectFilterBar"></div>
+      </div>
+
+      <!-- ── WORK MODE PANEL ── -->
+      <div id="workPanel" style="display:none">
+        <div class="pressure-gauge" id="pressureGauge" style="display:none">
+          <div class="pressure-gauge-label">Deadline pressure</div>
+          <div class="pressure-track pressure-low" id="pressureTrack">
+            <div class="pressure-fill" id="pressureFill" style="width:0%"></div>
+          </div>
+          <div class="pressure-desc" id="pressureDesc"></div>
+        </div>
+        <div class="client-filter-bar" id="clientFilterBar"></div>
+        <div style="display:flex;justify-content:flex-end;margin-bottom:16px;">
+          <button class="weekly-summary-btn" onclick="generateWeeklySummary()">📋 Weekly summary</button>
+        </div>
+      </div>
+
+      <!-- ── LIFE MODE PANEL ── -->
+      <div id="lifePanel" style="display:none">
+        <div class="energy-bar">
+          <span class="energy-label">Energy</span>
+          <button class="energy-btn" id="energyHigh" onclick="setEnergy('high')">⚡ High</button>
+          <button class="energy-btn" id="energyMed" onclick="setEnergy('med')">〜 Medium</button>
+          <button class="energy-btn" id="energyLow" onclick="setEnergy('low')">🌙 Low</button>
+        </div>
+        <div id="goalMilestones" class="goal-milestones" style="display:none"></div>
+        <div id="errandGroups" style="display:none"></div>
+      </div>
+
       <div class="focus-banner" id="focusBanner">
         <div class="focus-banner-label"><span class="pulse"></span> Today's focus</div>
         <div class="focus-banner-task" id="focusBannerTask"></div>
@@ -567,6 +668,17 @@ textarea:focus{border-color:var(--mode-border);box-shadow:inset 0 2px 8px rgba(0
       <button class="modal-cancel" onclick="closeWeekView()" style="width:auto;padding:6px 14px;">Close</button>
     </div>
     <div id="weekViewContent">Loading…</div>
+  </div>
+</div>
+<!-- ── WEEKLY SUMMARY MODAL ── -->
+<div class="modal-overlay" id="weeklySummaryOverlay" onclick="if(event.target===this)document.getElementById('weeklySummaryOverlay').classList.remove('open')">
+  <div class="modal" style="max-width:520px;">
+    <div class="share-modal-title">Weekly work summary</div>
+    <textarea class="share-textarea" id="weeklySummaryText" readonly style="height:260px;margin-bottom:14px;"></textarea>
+    <div class="modal-actions">
+      <button class="modal-cancel" onclick="document.getElementById('weeklySummaryOverlay').classList.remove('open')">Close</button>
+      <button class="copy-btn" onclick="navigator.clipboard.writeText(document.getElementById('weeklySummaryText').value).then(function(){var b=event.target;b.textContent='Copied! ✓';setTimeout(function(){b.textContent='Copy ↗';},2000)})">Copy ↗</button>
+    </div>
   </div>
 </div>
 <!-- ── SHARE MODAL ── -->
@@ -1482,6 +1594,490 @@ function formatCalRange(start, end) {
 
 // Init calendar on load
 calInit();
+
+
+// ══════════════════════════════════════════
+// MODE-SPECIFIC FEATURES
+// ══════════════════════════════════════════
+
+var SUBJECTS = ['Math','Science','English','History','Other'];
+var SUBJECT_COLORS = { Math:'subject-math', Science:'subject-science', English:'subject-english', History:'subject-history', Other:'subject-other' };
+var GOALS_KEY = 'priovra_goals';
+var ENERGY_KEY = 'priovra_energy';
+var SPACED_KEY = 'priovra_spaced';
+var activeClientFilter = null;
+var activeSubjectFilter = null;
+
+// ── RENDER MODE PANELS ──
+function renderModePanel() {
+  var p = getProject();
+  if (!p) return;
+  var mode = p.mode;
+  document.getElementById('studyPanel').style.display = mode === 'study' ? 'block' : 'none';
+  document.getElementById('workPanel').style.display = mode === 'work' ? 'block' : 'none';
+  document.getElementById('lifePanel').style.display = mode === 'life' ? 'block' : 'none';
+  if (mode === 'study') renderStudyPanel(p);
+  if (mode === 'work') renderWorkPanel(p);
+  if (mode === 'life') renderLifePanel(p);
+}
+
+// ══ STUDY MODE ══
+
+function renderStudyPanel(p) {
+  var tasks = p.tasks.filter(function(t){ return !t.done; });
+  // Subject stats
+  var subjectCounts = {};
+  SUBJECTS.forEach(function(s){ subjectCounts[s] = 0; });
+  tasks.forEach(function(t){
+    var s = t.subject || 'Other';
+    subjectCounts[s] = (subjectCounts[s] || 0) + 1;
+  });
+  var statsEl = document.getElementById('subjectStats');
+  var activeSubjects = SUBJECTS.filter(function(s){ return subjectCounts[s] > 0; });
+  if (statsEl && activeSubjects.length) {
+    statsEl.innerHTML = activeSubjects.map(function(s){
+      return '<div class="subject-stat-card">' +
+        '<div class="subject-stat-num ' + (SUBJECT_COLORS[s]||'') + '">' + subjectCounts[s] + '</div>' +
+        '<div class="subject-stat-label">' + s + '</div>' +
+      '</div>';
+    }).join('');
+    statsEl.style.display = 'grid';
+  } else if (statsEl) { statsEl.style.display = 'none'; }
+
+  // Subject filter bar
+  var filterEl = document.getElementById('subjectFilterBar');
+  if (filterEl && activeSubjects.length > 1) {
+    filterEl.innerHTML =
+      '<button class="client-filter-pill' + (!activeSubjectFilter?' active':'') + '" onclick="filterBySubject(null)">All</button>' +
+      activeSubjects.map(function(s){
+        return '<button class="client-filter-pill' + (activeSubjectFilter===s?' active':'') + '" onclick="filterBySubject(\'' + s + '\')">' + s + '</button>';
+      }).join('');
+  } else if (filterEl) { filterEl.innerHTML = ''; }
+
+  // Spaced rep reminders
+  renderSpacedRep();
+}
+
+function filterBySubject(subject) {
+  activeSubjectFilter = subject;
+  renderStudyPanel(getProject());
+  render();
+}
+
+function renderSpacedRep() {
+  var due = getSpacedRepDue();
+  if (!due.length) return;
+  // Show reminder for first due item inline
+  var existing = document.getElementById('spacedRepBanner');
+  if (!existing) {
+    var banner = document.createElement('div');
+    banner.id = 'spacedRepBanner';
+    banner.className = 'spaced-rep-banner';
+    var statsEl = document.getElementById('subjectStats');
+    if (statsEl && statsEl.parentNode) statsEl.parentNode.insertBefore(banner, statsEl.nextSibling);
+  }
+  var el = document.getElementById('spacedRepBanner');
+  if (!el) return;
+  el.innerHTML =
+    '<div class="spaced-rep-text">🔁 Time to review: <strong>' + esc(due[0].name) + '</strong>' +
+    (due.length > 1 ? ' (+' + (due.length-1) + ' more)' : '') + '</div>' +
+    '<button class="spaced-rep-btn" onclick="snoozeSpacedRep(\'' + due[0].id + '\')">Review done ✓</button>';
+}
+
+function getSpacedRepDue() {
+  try {
+    var data = JSON.parse(localStorage.getItem(SPACED_KEY) || '[]');
+    var now = Date.now();
+    return data.filter(function(r){ return r.nextReview <= now; });
+  } catch(e) { return []; }
+}
+
+function scheduleSpacedRep(taskId, taskName) {
+  try {
+    var data = JSON.parse(localStorage.getItem(SPACED_KEY) || '[]');
+    // Remove existing
+    data = data.filter(function(r){ return r.id !== taskId; });
+    var intervals = [1,3,7,21]; // days
+    var existing = data.find(function(r){ return r.id === taskId; });
+    var step = existing ? Math.min((existing.step||0)+1, intervals.length-1) : 0;
+    data.push({ id: taskId, name: taskName, step: step, nextReview: Date.now() + intervals[step]*86400000 });
+    localStorage.setItem(SPACED_KEY, JSON.stringify(data));
+  } catch(e) {}
+}
+
+function snoozeSpacedRep(taskId) {
+  try {
+    var data = JSON.parse(localStorage.getItem(SPACED_KEY) || '[]');
+    var item = data.find(function(r){ return r.id === taskId; });
+    if (item) {
+      var intervals = [1,3,7,21];
+      item.step = Math.min((item.step||0)+1, intervals.length-1);
+      item.nextReview = Date.now() + intervals[item.step]*86400000;
+    }
+    localStorage.setItem(SPACED_KEY, JSON.stringify(data));
+    renderSpacedRep();
+  } catch(e) {}
+}
+
+// ── Subject picker on task (shown in inline expand) ──
+function setTaskSubject(taskId, subject) {
+  var p = getProject(); if (!p) return;
+  var t = p.tasks.find(function(t){ return t.id === taskId; }); if (!t) return;
+  t.subject = subject;
+  saveState(); render(); renderModePanel();
+}
+
+// ── Grade impact (1-5 scale) ──
+function setTaskImpact(taskId, val) {
+  var p = getProject(); if (!p) return;
+  var t = p.tasks.find(function(t){ return t.id === taskId; }); if (!t) return;
+  t.gradeImpact = val;
+  // Boost priority if high grade impact
+  if (val >= 4) t.impact = Math.max(t.impact, 80);
+  if (val >= 5) t.impact = Math.max(t.impact, 92);
+  t.priority_score = (t.urgency*0.5) + (t.impact*0.35) - (t.effort*0.15);
+  p.tasks.sort(function(a,b){ return (a.done?1:0)-(b.done?1:0)||b.priority_score-a.priority_score; });
+  saveState(); render();
+}
+
+function renderGradeImpact(taskId, current) {
+  var html = '<div class="impact-bar-wrap">' +
+    '<span class="impact-label">Grade impact</span>' +
+    '<div class="impact-pips">';
+  for (var i = 1; i <= 5; i++) {
+    html += '<div class="impact-pip' + (current >= i ? ' active-'+i : '') + '" onclick="setTaskImpact(\'' + taskId + '\',' + i + ')" title="' + i + '/5"></div>';
+  }
+  html += '</div></div>';
+  return html;
+}
+
+// ══ WORK MODE ══
+
+function renderWorkPanel(p) {
+  var tasks = p.tasks.filter(function(t){ return !t.done; });
+  renderPressureGauge(tasks);
+  renderClientFilter(tasks);
+}
+
+function renderPressureGauge(tasks) {
+  var gauge = document.getElementById('pressureGauge');
+  if (!gauge) return;
+  var withDue = tasks.filter(function(t){ return t.dueDate; });
+  if (!withDue.length) { gauge.style.display='none'; return; }
+  gauge.style.display = 'block';
+
+  // Calculate pressure: average urgency weighted by proximity
+  var now = Date.now();
+  var totalPressure = 0;
+  var overdue = 0;
+  withDue.forEach(function(t) {
+    var days = Math.ceil((new Date(t.dueDate) - now) / 86400000);
+    if (days < 0) { overdue++; totalPressure += 100; }
+    else if (days <= 1) totalPressure += 90;
+    else if (days <= 3) totalPressure += 70;
+    else if (days <= 7) totalPressure += 40;
+    else totalPressure += 15;
+  });
+  var avg = Math.round(totalPressure / withDue.length);
+  var track = document.getElementById('pressureTrack');
+  var fill = document.getElementById('pressureFill');
+  var desc = document.getElementById('pressureDesc');
+  if (!track || !fill || !desc) return;
+  fill.style.width = avg + '%';
+  track.className = 'pressure-track ' + (avg >= 70 ? 'pressure-high' : avg >= 40 ? 'pressure-med' : 'pressure-low');
+  var level = avg >= 70 ? '🔴 High pressure' : avg >= 40 ? '🟠 Moderate pressure' : '🟢 On track';
+  desc.textContent = level + ' — ' + withDue.length + ' deadline' + (withDue.length!==1?'s':'') + (overdue?' ('+overdue+' overdue)':'');
+}
+
+function renderClientFilter(tasks) {
+  var clients = {};
+  tasks.forEach(function(t){ if (t.client) clients[t.client] = (clients[t.client]||0)+1; });
+  var clientList = Object.keys(clients);
+  var bar = document.getElementById('clientFilterBar');
+  if (!bar) return;
+  if (!clientList.length) { bar.innerHTML=''; return; }
+  bar.innerHTML =
+    '<button class="client-filter-pill' + (!activeClientFilter?' active':'') + '" onclick="filterByClient(null)">All clients</button>' +
+    clientList.map(function(c){
+      return '<button class="client-filter-pill' + (activeClientFilter===c?' active':'') + '" onclick="filterByClient(\'' + c.replace(/'/g,"\\'") + '\')">' + esc(c) + ' (' + clients[c] + ')</button>';
+    }).join('');
+}
+
+function filterByClient(client) {
+  activeClientFilter = client;
+  renderWorkPanel(getProject());
+  render();
+}
+
+function setTaskClient(taskId, client) {
+  var p = getProject(); if (!p) return;
+  var t = p.tasks.find(function(t){ return t.id===taskId; }); if (!t) return;
+  t.client = client || null;
+  saveState(); render(); renderModePanel();
+}
+
+// Meeting prep auto-gen
+async function generateMeetingPrep(taskId) {
+  var p = getProject(); if (!p) return;
+  var t = p.tasks.find(function(t){ return t.id===taskId; }); if (!t) return;
+  var btn = document.getElementById('meetingPrepBtn');
+  if (btn) { btn.disabled=true; btn.textContent='Generating…'; }
+  try {
+    var prompt = 'Generate a meeting preparation checklist for: "' + t.name + '"\nReturn ONLY JSON:\n{"items":["prep item 1","prep item 2","prep item 3","prep item 4","prep item 5"]}';
+    var text = await callAI(prompt, 400);
+    var d = JSON.parse(cleanJSON(text));
+    // Inject into existing checklist cache
+    var cached = loadCached(t.name);
+    if (cached && d.items) {
+      d.items.forEach(function(item){ cached.checklist.push({ text: item }); });
+      saveCache(t.name, cached);
+    }
+    if (btn) { btn.textContent='✓ Added to checklist'; btn.disabled=false; }
+  } catch(e) { if (btn) { btn.disabled=false; btn.textContent='Meeting prep'; } }
+}
+
+// Weekly summary
+async function generateWeeklySummary() {
+  var p = getProject(); if (!p) return;
+  var overlay = document.getElementById('weeklySummaryOverlay');
+  var textEl = document.getElementById('weeklySummaryText');
+  overlay.classList.add('open');
+  textEl.value = 'Generating your weekly summary…';
+  var done = p.tasks.filter(function(t){ return t.done; });
+  var active = p.tasks.filter(function(t){ return !t.done; });
+  var now = new Date();
+  var weekStart = new Date(now); weekStart.setDate(now.getDate()-7);
+  var sep = '────────────────────────────────────────';
+  if (!done.length && !active.length) { textEl.value = 'No tasks yet this week.'; return; }
+  try {
+    var taskSummary = 'Completed: ' + done.map(function(t){ return t.name; }).join(', ') +
+      '\nActive: ' + active.map(function(t){ return t.name + ' (score:' + Math.round(t.priority_score) + ')'; }).join(', ');
+    var prompt = 'Generate a professional weekly work summary for these tasks:\n' + taskSummary +
+      '\nWrite 3-4 sentences covering: what was accomplished, current priorities, and any recommendations. Professional tone.';
+    var text = await callAI(prompt, 400);
+    textEl.value = 'PRIOVRA — Weekly Work Summary\n' + sep + '\n' +
+      'Project: ' + p.name + '\nWeek of: ' + weekStart.toLocaleDateString('en-US',{month:'long',day:'numeric'}) + ' – ' + now.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'}) + '\n\n' +
+      text.trim() + '\n\n' +
+      sep + '\n' +
+      'Completed (' + done.length + '):\n' + done.map(function(t){ return '  ✓ '+t.name; }).join('\n') + '\n\n' +
+      'Still active (' + active.length + '):\n' + active.map(function(t){ return '  · '+t.name+' (priority '+Math.round(t.priority_score)+')'; }).join('\n') + '\n\n' +
+      sep + '\nGenerated by Priovra · AI Task Operator';
+  } catch(e) { textEl.value = 'Could not generate summary. Try again.'; }
+}
+
+// ══ LIFE MODE ══
+
+function renderLifePanel(p) {
+  var energy = localStorage.getItem(ENERGY_KEY) || null;
+  updateEnergyButtons(energy);
+  renderGoalMilestones(p);
+  renderErrandGroups(p);
+}
+
+function setEnergy(level) {
+  localStorage.setItem(ENERGY_KEY, level);
+  updateEnergyButtons(level);
+  // Reorder tasks based on energy
+  var p = getProject(); if (!p) return;
+  var tasks = p.tasks.filter(function(t){ return !t.done; });
+  if (level === 'high') {
+    // High energy: hard tasks first (high effort = important to tackle now)
+    tasks.sort(function(a,b){ return b.priority_score - a.priority_score; });
+  } else if (level === 'low') {
+    // Low energy: easy wins first (low effort tasks)
+    tasks.sort(function(a,b){ return (a.effort||50) - (b.effort||50) || b.priority_score - a.priority_score; });
+  } else {
+    // Medium: normal priority order
+    tasks.sort(function(a,b){ return b.priority_score - a.priority_score; });
+  }
+  var doneTasks = p.tasks.filter(function(t){ return t.done; });
+  p.tasks = tasks.concat(doneTasks);
+  render();
+}
+
+function updateEnergyButtons(level) {
+  var btns = { high: document.getElementById('energyHigh'), med: document.getElementById('energyMed'), low: document.getElementById('energyLow') };
+  Object.keys(btns).forEach(function(k) {
+    if (!btns[k]) return;
+    btns[k].className = 'energy-btn' + (level===k ? ' active-'+k : '');
+  });
+}
+
+function setTaskGoal(taskId, goal) {
+  var p = getProject(); if (!p) return;
+  var t = p.tasks.find(function(t){ return t.id===taskId; }); if (!t) return;
+  t.goal = goal || null;
+  saveState(); render(); renderModePanel();
+}
+
+function renderGoalMilestones(p) {
+  var el = document.getElementById('goalMilestones');
+  if (!el) return;
+  var goals = {};
+  p.tasks.forEach(function(t) {
+    if (!t.goal) return;
+    if (!goals[t.goal]) goals[t.goal] = { total:0, done:0 };
+    goals[t.goal].total++;
+    if (t.done) goals[t.goal].done++;
+  });
+  var goalList = Object.keys(goals);
+  if (!goalList.length) { el.style.display='none'; return; }
+  el.style.display = 'block';
+  el.innerHTML = '<div style="font-size:8px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px;">Goal progress</div>' +
+    goalList.map(function(g) {
+      var pct = goals[g].total ? Math.round((goals[g].done/goals[g].total)*100) : 0;
+      return '<div class="goal-milestone-item">' +
+        '<div class="goal-milestone-name">' + esc(g) + '</div>' +
+        '<div class="goal-milestone-bar-wrap"><div class="goal-milestone-bar" style="width:'+pct+'%"></div></div>' +
+        '<div class="goal-milestone-pct">' + pct + '%</div>' +
+      '</div>';
+    }).join('');
+}
+
+function renderErrandGroups(p) {
+  var el = document.getElementById('errandGroups');
+  if (!el) return;
+  var locations = {};
+  p.tasks.filter(function(t){ return !t.done && t.location; }).forEach(function(t) {
+    if (!locations[t.location]) locations[t.location] = [];
+    locations[t.location].push(t);
+  });
+  var locList = Object.keys(locations);
+  if (locList.length < 2) { el.style.display='none'; return; }
+  el.style.display = 'block';
+  el.innerHTML = '<div style="font-size:8px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px;">📍 Errands by location</div>' +
+    locList.map(function(loc) {
+      return '<div class="errand-group">' +
+        '<div class="errand-group-header">' +
+          '<span class="errand-group-location">📍 ' + esc(loc) + '</span>' +
+          '<span class="errand-group-count">· ' + locations[loc].length + ' task' + (locations[loc].length!==1?'s':'') + '</span>' +
+        '</div>' +
+        '<div class="errand-group-tasks">' +
+          locations[loc].map(function(t){ return '<div class="errand-task-row">' + esc(t.name) + '</div>'; }).join('') +
+        '</div>' +
+      '</div>';
+    }).join('');
+}
+
+function setTaskLocation(taskId, location) {
+  var p = getProject(); if (!p) return;
+  var t = p.tasks.find(function(t){ return t.id===taskId; }); if (!t) return;
+  t.location = location || null;
+  saveState(); render(); renderModePanel();
+}
+
+// ── EXTEND INLINE EXPAND WITH MODE FEATURES ──
+var _originalLoadInlineExpand = loadInlineExpand;
+loadInlineExpand = async function(taskId, el) {
+  await _originalLoadInlineExpand(taskId, el);
+  // Append mode-specific controls after a brief delay
+  setTimeout(function(){ appendModeControls(taskId, el); }, 50);
+};
+
+function appendModeControls(taskId, el) {
+  var p = getProject(); if (!p) return;
+  var t = p.tasks.find(function(t){ return t.id===taskId; }); if (!t) return;
+  var mode = p.mode;
+  var extra = document.createElement('div');
+  extra.style.marginTop = '12px';
+  extra.style.borderTop = '1px solid rgba(255,255,255,0.06)';
+  extra.style.paddingTop = '12px';
+  extra.style.display = 'flex';
+  extra.style.flexWrap = 'wrap';
+  extra.style.gap = '8px';
+  extra.style.alignItems = 'center';
+
+  if (mode === 'study') {
+    // Subject picker
+    var subjectHtml = '<div style="display:flex;gap:5px;flex-wrap:wrap;align-items:center;">' +
+      '<span style="font-family:Orbitron,sans-serif;font-size:7px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-muted);margin-right:2px;">Subject</span>' +
+      SUBJECTS.map(function(s) {
+        return '<span class="subject-tag ' + (SUBJECT_COLORS[s]||'subject-other') + (t.subject===s?' '+'selected-tag':'') + '" onclick="setTaskSubject(\'' + taskId + '\',\'' + s + '\')" style="' + (t.subject===s?'box-shadow:0 0 8px currentColor;':'') + '">' + s + '</span>';
+      }).join('') + '</div>';
+    extra.innerHTML += subjectHtml;
+    // Grade impact
+    extra.innerHTML += renderGradeImpact(taskId, t.gradeImpact || 0);
+    // Spaced rep (if task was completed)
+    if (t.done) {
+      extra.innerHTML += '<button class="spaced-rep-btn" onclick="scheduleSpacedRep(\'' + taskId + '\',\'' + t.name.replace(/'/g,"\\'") + '\');this.textContent=\'✓ Reminder set\'">🔁 Set review reminder</button>';
+    }
+  }
+
+  if (mode === 'work') {
+    // Client tag
+    var clientVal = t.client || '';
+    extra.innerHTML += '<div style="display:flex;align-items:center;gap:6px;">' +
+      '<span style="font-family:Orbitron,sans-serif;font-size:7px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-muted);">Client</span>' +
+      '<input type="text" placeholder="Client name" value="' + esc(clientVal) + '" ' +
+        'style="background:rgba(15,32,39,0.8);border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:4px 10px;font-family:Exo 2,sans-serif;font-size:12px;color:var(--text);outline:none;width:120px;" ' +
+        'onchange="setTaskClient(\'' + taskId + '\',this.value)" />' +
+      '</div>';
+    // Meeting prep button
+    if (t.name.toLowerCase().match(/meeting|call|sync|standup|review|presentation/)) {
+      extra.innerHTML += '<button class="spaced-rep-btn" id="meetingPrepBtn" onclick="generateMeetingPrep(\'' + taskId + '\')">📋 Meeting prep</button>';
+    }
+  }
+
+  if (mode === 'life') {
+    // Goal tag
+    var goalVal = t.goal || '';
+    extra.innerHTML += '<div style="display:flex;align-items:center;gap:6px;">' +
+      '<span style="font-family:Orbitron,sans-serif;font-size:7px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-muted);">Goal</span>' +
+      '<input type="text" placeholder="e.g. Get fit" value="' + esc(goalVal) + '" ' +
+        'style="background:rgba(15,32,39,0.8);border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:4px 10px;font-family:Exo 2,sans-serif;font-size:12px;color:var(--text);outline:none;width:110px;" ' +
+        'onchange="setTaskGoal(\'' + taskId + '\',this.value)" />' +
+      '</div>';
+    // Location tag
+    var locVal = t.location || '';
+    extra.innerHTML += '<div style="display:flex;align-items:center;gap:6px;">' +
+      '<span style="font-family:Orbitron,sans-serif;font-size:7px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-muted);">📍</span>' +
+      '<input type="text" placeholder="Location" value="' + esc(locVal) + '" ' +
+        'style="background:rgba(15,32,39,0.8);border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:4px 10px;font-family:Exo 2,sans-serif;font-size:12px;color:var(--text);outline:none;width:110px;" ' +
+        'onchange="setTaskLocation(\'' + taskId + '\',this.value)" />' +
+      '</div>';
+  }
+
+  if (extra.innerHTML) el.appendChild(extra);
+}
+
+// ── Hook renderModePanel into render() and switchProject() ──
+var _originalRender = render;
+render = function() {
+  // Apply filters before rendering
+  var p = getProject();
+  if (p) {
+    var mode = p.mode;
+    var origTasks = p.tasks.slice();
+    if (mode === 'study' && activeSubjectFilter) {
+      p._filteredTasks = p.tasks;
+      p.tasks = p.tasks.filter(function(t){ return !t.done && (t.subject||'Other') === activeSubjectFilter; }).concat(p.tasks.filter(function(t){ return t.done; }));
+    }
+    if (mode === 'work' && activeClientFilter) {
+      p._filteredTasks = p.tasks;
+      p.tasks = p.tasks.filter(function(t){ return !t.done && t.client === activeClientFilter; }).concat(p.tasks.filter(function(t){ return t.done; }));
+    }
+    _originalRender();
+    if (p._filteredTasks) { p.tasks = p._filteredTasks; delete p._filteredTasks; }
+  } else {
+    _originalRender();
+  }
+  renderModePanel();
+};
+
+var _originalSwitchProject = switchProject;
+switchProject = function(id) {
+  activeClientFilter = null;
+  activeSubjectFilter = null;
+  _originalSwitchProject(id);
+};
+
+var _originalApplyMode = applyMode;
+applyMode = function(mode) {
+  _originalApplyMode(mode);
+  activeClientFilter = null;
+  activeSubjectFilter = null;
+  setTimeout(renderModePanel, 0);
+};
 
 </script>
 </body>
