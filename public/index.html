@@ -269,6 +269,48 @@ textarea:focus{border-color:var(--mode-border);box-shadow:inset 0 2px 8px rgba(0
 .step-desc{font-family:'Exo 2',sans-serif;font-size:11px;color:var(--text-dim);line-height:1.6;}
 .step-time{font-size:8px;color:var(--mode-color);letter-spacing:0.1em;margin-top:4px;font-weight:500;}
 
+
+/* ── DAILY FOCUS BANNER ── */
+.focus-banner{background:linear-gradient(145deg,rgba(0,212,232,0.16),rgba(0,150,180,0.08));border:1px solid var(--mode-border);border-radius:var(--radius-lg);padding:16px 22px;margin-bottom:28px;display:none;position:relative;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.2),inset 0 1px 0 rgba(255,255,255,0.1);}
+.focus-banner::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--mode-color),transparent);opacity:0.6;}
+.focus-banner-label{font-size:7px;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;color:var(--mode-color);margin-bottom:6px;display:flex;align-items:center;gap:6px;}
+.focus-banner-task{font-family:'Exo 2',sans-serif;font-size:16px;font-weight:600;color:var(--text);line-height:1.3;}
+.focus-banner-actions{display:flex;gap:8px;margin-top:12px;align-items:center;}
+.focus-clear-btn{font-family:'Orbitron',sans-serif;font-size:7px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);background:none;border:none;cursor:pointer;padding:0;transition:color 0.15s;}
+.focus-clear-btn:hover{color:var(--red);}
+/* ── DONE / COMPLETE state ── */
+.task-item.done-task{opacity:0.45;filter:grayscale(0.4);}
+.task-item.done-task .task-name{text-decoration:line-through;}
+.done-btn{background:none;border:1px solid rgba(0,232,160,0.3);color:#00e8a0;font-family:'Orbitron',sans-serif;font-size:7px;font-weight:600;letter-spacing:0.1em;padding:5px 9px;border-radius:6px;cursor:pointer;transition:all 0.15s;white-space:nowrap;}
+.done-btn:hover{background:rgba(0,232,160,0.12);box-shadow:0 0 10px rgba(0,232,160,0.2);}
+.done-btn.is-done{background:rgba(0,232,160,0.15);border-color:rgba(0,232,160,0.5);color:#00e8a0;}
+.focus-btn{background:none;border:1px solid var(--mode-border);color:var(--mode-color);font-family:'Orbitron',sans-serif;font-size:7px;font-weight:600;letter-spacing:0.1em;padding:5px 9px;border-radius:6px;cursor:pointer;transition:all 0.15s;white-space:nowrap;}
+.focus-btn:hover{background:var(--mode-dim);}
+.focus-btn.is-focus{background:var(--mode-dim);border-color:var(--mode-color);}
+/* ── COMPLETED SECTION ── */
+.completed-section{margin-top:28px;}
+.completed-toggle{display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;font-family:'Orbitron',sans-serif;font-size:8px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-muted);padding:0;margin-bottom:12px;transition:color 0.15s;}
+.completed-toggle:hover{color:var(--text-dim);}
+.completed-chevron{font-size:10px;transition:transform 0.2s;}
+.completed-chevron.open{transform:rotate(90deg);}
+.completed-list{display:none;flex-direction:column;gap:6px;}
+.completed-list.open{display:flex;}
+/* ── DUE DATE ── */
+.due-badge{font-family:'Exo 2',sans-serif;font-size:10px;padding:2px 7px;border-radius:99px;border:1px solid rgba(255,255,255,0.1);color:var(--text-muted);cursor:pointer;transition:all 0.15s;white-space:nowrap;}
+.due-badge:hover{border-color:var(--mode-border);color:var(--mode-color);}
+.due-badge.overdue{border-color:rgba(255,107,107,0.4);color:var(--red);background:var(--red-dim);}
+.due-badge.due-soon{border-color:rgba(240,160,48,0.4);color:#f0a030;background:rgba(240,160,48,0.1);}
+.due-badge.due-ok{border-color:rgba(0,232,160,0.3);color:#00e8a0;}
+/* ── REPRIORITIZE ── */
+.reprioritize-btn{display:flex;align-items:center;gap:6px;background:none;border:1px solid var(--border);color:var(--text-muted);font-family:'Orbitron',sans-serif;font-size:8px;font-weight:600;letter-spacing:0.14em;padding:7px 13px;border-radius:var(--radius);cursor:pointer;transition:all 0.15s;text-transform:uppercase;}
+.reprioritize-btn:hover{border-color:var(--mode-border);color:var(--mode-color);background:var(--mode-dim);}
+.reprioritize-btn:disabled{opacity:0.4;cursor:not-allowed;}
+/* ── SHARE MODAL ── */
+.share-textarea{width:100%;background:rgba(15,32,39,0.9);border:1px solid var(--border-hi);border-radius:var(--radius);padding:12px 14px;font-family:'Exo 2',sans-serif;font-size:12px;color:var(--text-dim);resize:none;height:200px;outline:none;line-height:1.6;}
+.copy-btn{flex:2;padding:11px;background:linear-gradient(145deg,var(--mode-color),color-mix(in srgb,var(--mode-color) 75%,#000));border:none;border-radius:var(--radius);font-family:'Orbitron',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.16em;color:#0a1920;cursor:pointer;transition:all 0.15s;text-transform:uppercase;box-shadow:0 4px 16px var(--mode-dim);}
+.copy-btn:hover{transform:translateY(-1px);}
+.share-modal-title{font-size:13px;font-weight:700;letter-spacing:0.16em;color:var(--text);margin-bottom:16px;text-transform:uppercase;}
+
 /* ── CONTEXT QUESTIONS ── */
 .ctx-wrap{display:flex;flex-direction:column;gap:24px;}
 .ctx-intro{font-family:'Exo 2',sans-serif;font-size:14px;color:var(--text-dim);line-height:1.7;}
@@ -297,6 +339,49 @@ textarea:focus{border-color:var(--mode-border);box-shadow:inset 0 2px 8px rgba(0
   .task-name{font-size:13px;}
   .topbar-logo svg{width:22px;height:25px;}
 }
+
+/* ── CALENDAR ── */
+.cal-connect-bar{display:flex;align-items:center;justify-content:space-between;background:linear-gradient(145deg,rgba(44,83,100,0.5),rgba(32,58,67,0.35));border:1px solid var(--border);border-radius:var(--radius);padding:12px 18px;margin-bottom:24px;gap:12px;}
+.cal-connect-bar.connected{border-color:rgba(0,232,160,0.3);background:linear-gradient(145deg,rgba(0,232,160,0.08),rgba(32,58,67,0.35));}
+.cal-connect-info{display:flex;align-items:center;gap:10px;}
+.cal-dot{width:8px;height:8px;border-radius:50%;background:var(--text-muted);flex-shrink:0;}
+.cal-dot.live{background:#00e8a0;box-shadow:0 0 8px rgba(0,232,160,0.6);}
+.cal-connect-text{font-family:"Exo 2",sans-serif;font-size:13px;color:var(--text-dim);}
+.cal-connect-text strong{color:var(--text);font-weight:600;}
+.cal-btn{font-family:"Orbitron",sans-serif;font-size:8px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:8px 16px;border-radius:var(--radius);cursor:pointer;border:none;transition:all 0.15s;white-space:nowrap;}
+.cal-btn-connect{background:linear-gradient(145deg,#00e8a0,#00b880);color:#0a1920;box-shadow:0 4px 14px rgba(0,232,160,0.25),inset 0 1px 0 rgba(255,255,255,0.25);}
+.cal-btn-connect:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(0,232,160,0.35);}
+.cal-btn-secondary{background:none;border:1px solid var(--border);color:var(--text-muted);font-family:"Orbitron",sans-serif;font-size:8px;font-weight:600;letter-spacing:0.12em;padding:7px 13px;border-radius:var(--radius);cursor:pointer;transition:all 0.15s;text-transform:uppercase;}
+.cal-btn-secondary:hover{border-color:var(--mode-border);color:var(--mode-color);}
+
+/* Calendar schedule panel on task page */
+.cal-panel{background:linear-gradient(145deg,rgba(44,83,100,0.6),rgba(32,58,67,0.42));border:1px solid rgba(255,255,255,0.09);border-radius:var(--radius-lg);padding:22px;box-shadow:0 6px 28px rgba(0,0,0,0.18),inset 0 1px 0 rgba(255,255,255,0.09);}
+.cal-panel-label{font-size:8px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:var(--mode-color);margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;}
+.cal-slot{padding:11px 14px;background:linear-gradient(145deg,rgba(15,32,39,0.8),rgba(32,58,67,0.5));border:1px solid rgba(255,255,255,0.07);border-radius:var(--radius);margin-bottom:8px;cursor:pointer;transition:all 0.15s;}
+.cal-slot:hover{border-color:var(--mode-border);}
+.cal-slot.best{border-color:rgba(0,232,160,0.4);background:linear-gradient(145deg,rgba(0,232,160,0.1),rgba(32,58,67,0.5));}
+.cal-slot-time{font-family:"Orbitron",sans-serif;font-size:10px;font-weight:600;color:var(--mode-color);margin-bottom:3px;}
+.cal-slot.best .cal-slot-time{color:#00e8a0;}
+.cal-slot-reason{font-family:"Exo 2",sans-serif;font-size:12px;color:var(--text-dim);line-height:1.5;}
+.cal-slot-badge{display:inline-block;font-family:"Orbitron",sans-serif;font-size:7px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:2px 7px;border-radius:99px;background:rgba(0,232,160,0.15);color:#00e8a0;border:1px solid rgba(0,232,160,0.3);margin-bottom:6px;}
+.cal-tip{font-family:"Exo 2",sans-serif;font-size:12px;color:var(--text-dim);padding:10px 14px;background:var(--mode-dim);border:1px solid var(--mode-border);border-radius:var(--radius);margin-bottom:12px;line-height:1.5;}
+.cal-schedule-btn{width:100%;padding:11px;background:linear-gradient(145deg,#00e8a0,#00b880);border:none;border-radius:var(--radius);font-family:"Orbitron",sans-serif;font-size:9px;font-weight:700;letter-spacing:0.16em;color:#0a1920;cursor:pointer;transition:all 0.15s;text-transform:uppercase;box-shadow:0 4px 14px rgba(0,232,160,0.25),inset 0 1px 0 rgba(255,255,255,0.25);}
+.cal-schedule-btn:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(0,232,160,0.35);}
+.cal-schedule-btn:disabled{opacity:0.4;cursor:not-allowed;transform:none;}
+.cal-scheduled-badge{display:inline-flex;align-items:center;gap:6px;font-family:"Exo 2",sans-serif;font-size:12px;color:#00e8a0;padding:8px 12px;background:rgba(0,232,160,0.1);border:1px solid rgba(0,232,160,0.3);border-radius:var(--radius);}
+
+/* Weekly view modal */
+.week-view{padding:0;}
+.week-header{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;margin-bottom:2px;}
+.week-day-label{font-family:"Orbitron",sans-serif;font-size:7px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);text-align:center;padding:6px 0;}
+.week-body{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;min-height:200px;}
+.week-day-col{background:rgba(15,32,39,0.5);border-radius:6px;padding:6px 4px;min-height:180px;}
+.week-day-col.today{background:var(--mode-dim);border:1px solid var(--mode-border);}
+.week-day-num{font-family:"Orbitron",sans-serif;font-size:9px;font-weight:600;color:var(--text-muted);text-align:center;margin-bottom:6px;}
+.week-event{font-family:"Exo 2",sans-serif;font-size:9px;color:var(--text-dim);padding:2px 4px;border-radius:3px;background:rgba(44,83,100,0.6);border-left:2px solid var(--text-muted);margin-bottom:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.week-event.priovra-task{background:var(--mode-dim);border-left-color:var(--mode-color);color:var(--mode-color);}
+.week-event.suggested{background:rgba(0,232,160,0.12);border-left-color:#00e8a0;color:#00e8a0;}
+
 </style>
 </head>
 <body>
@@ -359,6 +444,25 @@ textarea:focus{border-color:var(--mode-border);box-shadow:inset 0 2px 8px rgba(0
     </div>
 
     <div class="content" id="homeContent">
+      <div id="calConnectBar" class="cal-connect-bar" style="display:none">
+        <div class="cal-connect-info">
+          <div class="cal-dot" id="calDot"></div>
+          <div class="cal-connect-text" id="calConnectText">Connect Google Calendar for AI scheduling</div>
+        </div>
+        <div style="display:flex;gap:8px;">
+          <button class="cal-btn-secondary" id="calWeekBtn" onclick="openWeekView()" style="display:none">Week view</button>
+          <button class="cal-btn-secondary" id="calIcalBtn" onclick="downloadIcal()" style="display:none" title="Export for Apple Calendar">Apple Cal ↓</button>
+          <button class="cal-btn cal-btn-connect" id="calActionBtn" onclick="calAction()">Connect Google Calendar</button>
+        </div>
+      </div>
+      <div class="focus-banner" id="focusBanner">
+        <div class="focus-banner-label"><span class="pulse"></span> Today's focus</div>
+        <div class="focus-banner-task" id="focusBannerTask"></div>
+        <div class="focus-banner-actions">
+          <button class="btn-ghost" onclick="openFocusTask()" style="font-size:8px;padding:7px 14px;">Open plan ↗</button>
+          <button class="focus-clear-btn" onclick="clearFocus()">× Clear focus</button>
+        </div>
+      </div>
       <div class="input-zone">
         <div class="input-label">// enter your tasks</div>
         <textarea id="taskInput" rows="3" placeholder="e.g. Study for math test Friday, finish client deck, call dentist…"></textarea>
@@ -383,10 +487,22 @@ textarea:focus{border-color:var(--mode-border);box-shadow:inset 0 2px 8px rgba(0
       <div id="taskSection" style="display:none">
         <div class="list-header">
           <span class="list-title">// priority queue</span>
-          <button class="clear-btn" onclick="clearAll()">clear all</button>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <button class="reprioritize-btn" id="reprioBtn" onclick="reprioritizeAll()">↻ Re-rank</button>
+            <button class="clear-btn" onclick="clearAll()">clear all</button>
+          </div>
         </div>
         <div class="task-list" id="taskList"></div>
       </div>
+
+        <!-- completed section -->
+        <div class="completed-section" id="completedSection" style="display:none">
+          <button class="completed-toggle" onclick="toggleCompleted()">
+            <span class="completed-chevron" id="completedChevron">›</span>
+            Completed (<span id="completedCount">0</span>)
+          </button>
+          <div class="completed-list" id="completedList"></div>
+        </div>
 
       <div class="empty-state" id="emptyState">
         <div class="empty-icon">◎</div>
@@ -411,7 +527,10 @@ textarea:focus{border-color:var(--mode-border);box-shadow:inset 0 2px 8px rgba(0
   <line x1="1" y1="12" x2="27" y2="12" stroke="#00d4e8" stroke-width="0.4" opacity="0.2"/>
   <circle cx="14" cy="12" r="2.2" fill="url(#dg2)" filter="url(#dglow)"/>
 </svg><span style="font-size:11px;font-weight:800;letter-spacing:0.2em;color:var(--mode-color);text-shadow:0 0 14px var(--mode-color);">PRIOVRA</span></div>
-      <button class="tp-back" onclick="closeTaskPage()">← Back to project</button>
+      <div style="display:flex;gap:10px;align-items:center;">
+      <button class="tp-back" style="font-size:8px;padding:8px 14px;" onclick="shareTaskPlan(currentTpTaskId)">Share ↗</button>
+      <button class="tp-back" onclick="closeTaskPage()">← Back</button>
+      </div>
     </div>
     <div class="tp-layout">
       <div class="tp-sidebar" id="tpSidebar"></div>
@@ -440,42 +559,62 @@ textarea:focus{border-color:var(--mode-border);box-shadow:inset 0 2px 8px rgba(0
   </div>
 </div>
 
+<!-- ── WEEK VIEW MODAL ── -->
+<div class="modal-overlay" id="weekModalOverlay" onclick="if(event.target===this)closeWeekView()">
+  <div class="modal" style="max-width:680px;width:95vw;">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;">
+      <div class="share-modal-title" style="margin:0">Weekly overview</div>
+      <button class="modal-cancel" onclick="closeWeekView()" style="width:auto;padding:6px 14px;">Close</button>
+    </div>
+    <div id="weekViewContent">Loading…</div>
+  </div>
+</div>
+<!-- ── SHARE MODAL ── -->
+<div class="modal-overlay" id="shareModalOverlay">
+  <div class="modal">
+    <div class="share-modal-title" id="shareModalTitle">Share task plan</div>
+    <textarea class="share-textarea" id="shareTextarea" readonly></textarea>
+    <div class="modal-actions" style="margin-top:14px">
+      <button class="modal-cancel" onclick="closeShareModal()">Close</button>
+      <button class="copy-btn" onclick="copyShareText()" id="copyBtn">Copy to clipboard ↗</button>
+    </div>
+  </div>
+</div>
+
 <script>
+
 // ── STATE ──
 let projects = [];
 let activeProjectId = null;
 let modalMode = 'study';
+let currentTpTaskId = null;
 
 function loadState() {
   try { projects = JSON.parse(localStorage.getItem('priovra_projects') || '[]'); } catch(e) { projects = []; }
   activeProjectId = localStorage.getItem('priovra_active_project');
   if (!projects.length) createDefaultProjects();
-  if (!projects.find(p => p.id === activeProjectId)) activeProjectId = projects[0]?.id;
+  if (!projects.find(function(p){ return p.id === activeProjectId; })) activeProjectId = projects[0] && projects[0].id;
 }
-
 function saveState() {
   localStorage.setItem('priovra_projects', JSON.stringify(projects));
   localStorage.setItem('priovra_active_project', activeProjectId || '');
 }
-
 function createDefaultProjects() {
   projects = [
     { id: uid(), name: 'My Studies', mode: 'study', tasks: [], created: Date.now() },
     { id: uid(), name: 'Work Tasks', mode: 'work', tasks: [], created: Date.now() },
-    { id: uid(), name: 'Life', mode: 'life', tasks: [], created: Date.now() },
+    { id: uid(), name: 'Life', mode: 'life', tasks: [], created: Date.now() }
   ];
   activeProjectId = projects[0].id;
   saveState();
 }
-
 function uid() { return Math.random().toString(36).slice(2, 10); }
-function getProject(id) { return projects.find(p => p.id === (id || activeProjectId)); }
-function getTasks() { return getProject()?.tasks || []; }
+function getProject(id) { return projects.find(function(p){ return p.id === (id || activeProjectId); }); }
 function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
 // ── CACHE ──
 function cacheKey(projectId, taskName) {
-  return `apex_ctx:${projectId}:${taskName.trim().toLowerCase().slice(0,100)}`;
+  return 'priovra_ctx:' + projectId + ':' + taskName.trim().toLowerCase().slice(0,100);
 }
 function loadCached(taskName) {
   try { return JSON.parse(localStorage.getItem(cacheKey(activeProjectId, taskName)) || 'null'); } catch(e) { return null; }
@@ -483,98 +622,82 @@ function loadCached(taskName) {
 function saveCache(taskName, data) {
   try { localStorage.setItem(cacheKey(activeProjectId, taskName), JSON.stringify(data)); } catch(e) {}
 }
-function clearCache(taskName) {
-  localStorage.removeItem(cacheKey(activeProjectId, taskName));
-}
+function clearCache(taskName) { localStorage.removeItem(cacheKey(activeProjectId, taskName)); }
 
-// ── MODE COLORS ──
+// ── MODE ──
 function applyMode(mode) {
   document.getElementById('app').dataset.mode = mode;
-  const labels = { study: 'Study', work: 'Work', life: 'Life' };
-  const badge = document.getElementById('topbarMode');
+  var labels = { study:'Study', work:'Work', life:'Life' };
+  var badge = document.getElementById('topbarMode');
   if (badge) badge.textContent = labels[mode] || mode;
-  const logo = document.getElementById('topbarLogo');
-  if (logo) { const span = logo.querySelector('span'); if (span) { span.style.color = 'var(--mode-color)'; span.style.textShadow = '0 0 16px var(--mode-color)'; } }
-  document.querySelectorAll('.mode-pill').forEach(p => {
-    p.className = 'mode-pill' + (p.dataset.mode === mode ? ` active-${mode}` : '');
+  var logo = document.getElementById('topbarLogo');
+  if (logo) { var span = logo.querySelector('span'); if (span) { span.style.color='var(--mode-color)'; span.style.textShadow='0 0 16px var(--mode-color)'; } }
+  document.querySelectorAll('.mode-pill').forEach(function(p) {
+    p.className = 'mode-pill' + (p.dataset.mode === mode ? ' active-' + mode : '');
   });
-  const ph = { study:'e.g. Study for biology exam Friday, finish essay, practice problems…', work:'e.g. Prep client deck, send invoices, fix staging bug…', life:'e.g. Book dentist appointment, call mum, renew passport…' };
-  const ta = document.getElementById('taskInput');
+  var ph = { study:'e.g. Study for biology exam Friday, finish essay, practice problems…', work:'e.g. Prep client deck, send invoices, fix staging bug…', life:'e.g. Book dentist appointment, call mom, renew passport…' };
+  var ta = document.getElementById('taskInput');
   if (ta) ta.placeholder = ph[mode] || ph.life;
-  const emptyMsgs = { study:'No tasks yet.\nAdd a study task above.', work:'No tasks yet.\nAdd a work task above.', life:'No tasks yet.\nAdd a task above.' };
-  const et = document.getElementById('emptyText');
+  var emptyMsgs = { study:'No tasks yet. Add a study task above.', work:'No tasks yet. Add a work task above.', life:'No tasks yet. Add a task above.' };
+  var et = document.getElementById('emptyText');
   if (et) et.textContent = emptyMsgs[mode] || emptyMsgs.life;
 }
-
 function setProjectMode(mode) {
-  const p = getProject();
-  if (!p) return;
-  p.mode = mode;
-  saveState();
-  applyMode(mode);
-  renderSidebar();
+  var p = getProject(); if (!p) return;
+  p.mode = mode; saveState(); applyMode(mode); renderSidebar();
 }
 
-// ── PROJECT UI ──
+// ── SIDEBAR / PROJECTS ──
 function renderSidebar() {
-  const list = document.getElementById('projectList');
+  var list = document.getElementById('projectList');
   if (!list) return;
-  list.innerHTML = projects.map(p => {
-    const taskCount = p.tasks.length;
-    return `<div class="project-item${p.id === activeProjectId ? ' active' : ''}" onclick="switchProject('${p.id}')">
-      <div class="project-mode-dot" data-m="${p.mode}"></div>
-      <div class="project-info">
-        <div class="project-name">${esc(p.name)}</div>
-        <div class="project-meta">${taskCount} task${taskCount !== 1 ? 's' : ''} · ${p.mode}</div>
-      </div>
-      ${projects.length > 1 ? `<button class="project-del" onclick="event.stopPropagation();deleteProject('${p.id}')" title="Delete">×</button>` : ''}
-    </div>`;
+  list.innerHTML = projects.map(function(p) {
+    var active = p.tasks.filter(function(t){ return !t.done; }).length;
+    return '<div class="project-item' + (p.id === activeProjectId ? ' active' : '') + '" onclick="switchProject(\'' + p.id + '\')">' +
+      '<div class="project-mode-dot" data-m="' + p.mode + '"></div>' +
+      '<div class="project-info">' +
+        '<div class="project-name">' + esc(p.name) + '</div>' +
+        '<div class="project-meta">' + active + ' active · ' + p.mode + '</div>' +
+      '</div>' +
+      (projects.length > 1 ? '<button class="project-del" onclick="event.stopPropagation();deleteProject(\'' + p.id + '\')" title="Delete">×</button>' : '') +
+    '</div>';
   }).join('');
 }
-
 function switchProject(id) {
-  activeProjectId = id;
-  saveState();
-  const p = getProject();
-  applyMode(p?.mode || 'life');
-  document.getElementById('topbarProject').textContent = p?.name || '';
-  renderSidebar();
-  render();
-  closeSidebar();
+  activeProjectId = id; saveState();
+  var p = getProject();
+  applyMode(p ? p.mode : 'life');
+  document.getElementById('topbarProject').textContent = p ? p.name : '';
+  renderSidebar(); render(); closeSidebar();
 }
-
 function deleteProject(id) {
   if (projects.length <= 1) return;
-  projects = projects.filter(p => p.id !== id);
+  projects = projects.filter(function(p){ return p.id !== id; });
   if (activeProjectId === id) activeProjectId = projects[0].id;
-  saveState();
-  switchProject(activeProjectId);
+  saveState(); switchProject(activeProjectId);
 }
 
 // ── MODAL ──
 function openModal() {
-  modalMode = getProject()?.mode || 'study';
+  modalMode = (getProject() && getProject().mode) || 'study';
   document.getElementById('modalName').value = '';
   document.getElementById('modalOverlay').classList.add('open');
   document.getElementById('app').dataset.mode = modalMode;
   updateModalModeButtons();
-  setTimeout(() => document.getElementById('modalName').focus(), 50);
+  setTimeout(function(){ document.getElementById('modalName').focus(); }, 50);
 }
-function closeModal() { document.getElementById('modalOverlay').classList.remove('open'); applyMode(getProject()?.mode || 'life'); }
+function closeModal() { document.getElementById('modalOverlay').classList.remove('open'); applyMode((getProject() && getProject().mode) || 'life'); }
 function selectModalMode(m) { modalMode = m; document.getElementById('app').dataset.mode = m; updateModalModeButtons(); }
 function updateModalModeButtons() {
-  document.querySelectorAll('.mode-select-btn').forEach(b => {
-    b.className = 'mode-select-btn' + (b.dataset.m === modalMode ? ` sel-${modalMode}` : '');
+  document.querySelectorAll('.mode-select-btn').forEach(function(b) {
+    b.className = 'mode-select-btn' + (b.dataset.m === modalMode ? ' sel-' + modalMode : '');
   });
 }
 function createProject() {
-  const name = document.getElementById('modalName').value.trim();
+  var name = document.getElementById('modalName').value.trim();
   if (!name) return;
-  const p = { id: uid(), name, mode: modalMode, tasks: [], created: Date.now() };
-  projects.push(p);
-  saveState();
-  closeModal();
-  switchProject(p.id);
+  var p = { id: uid(), name: name, mode: modalMode, tasks: [], created: Date.now() };
+  projects.push(p); saveState(); closeModal(); switchProject(p.id);
 }
 
 // ── SIDEBAR MOBILE ──
@@ -582,344 +705,784 @@ function openSidebar() { document.getElementById('sidebar').classList.add('open'
 function closeSidebar() { document.getElementById('sidebar').classList.remove('open'); document.getElementById('sidebarOverlay').classList.remove('open'); }
 
 // ── AI ──
-async function callAI(prompt, maxTokens = 1200) {
-  const res = await fetch('/.netlify/functions/ai', {
+async function callAI(prompt, maxTokens) {
+  maxTokens = maxTokens || 1200;
+  var res = await fetch('/.netlify/functions/ai', {
     method: 'POST', headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ model: 'claude-sonnet-4-5', max_tokens: maxTokens, messages: [{ role: 'user', content: prompt }] })
   });
-  const data = await res.json();
+  var data = await res.json();
   if (!res.ok) throw new Error(data.error || 'API error');
-  return data.content.map(i => i.text || '').join('');
+  return data.content.map(function(i){ return i.text || ''; }).join('');
 }
+function cleanJSON(text) { return text.replace(/```json|```/g,'').trim(); }
 
 // ── TASK MANAGEMENT ──
-function showError(msg) { const el = document.getElementById('errorBar'); el.textContent = msg; el.style.display = msg ? 'block' : 'none'; }
+function showError(msg) { var el = document.getElementById('errorBar'); el.textContent = msg; el.style.display = msg ? 'block' : 'none'; }
 function setLoading(on) {
-  const btn = document.getElementById('addBtn');
+  var btn = document.getElementById('addBtn');
   document.getElementById('btnText').textContent = on ? 'Analyzing' : 'Prioritize';
   document.getElementById('btnArrow').innerHTML = on ? '<span class="spinner"></span>' : '↗';
   btn.disabled = on;
 }
 
 async function addTasks() {
-  const input = document.getElementById('taskInput');
-  const raw = input.value.trim();
+  var input = document.getElementById('taskInput');
+  var raw = input.value.trim();
   if (!raw) return;
-  const p = getProject();
-  if (!p) return;
+  var p = getProject(); if (!p) return;
   setLoading(true); showError('');
   try {
-    const mode = p.mode;
-    const modeCtx = { study: 'academic/studying context. Urgency = exam/deadline proximity. Impact = grade/learning importance.', work: 'professional work context. Urgency = client/deadline pressure. Impact = business/career importance.', life: 'personal life context. Urgency = time-sensitivity. Impact = life quality importance.' };
-    const prompt = `You are a task prioritization AI. Mode: ${modeCtx[mode]}
-User input: "${raw}"
-Extract each task. Score: urgency (1-100, deadlines = higher), impact (1-100), effort (1-100).
-priority_score = (urgency*0.5)+(impact*0.35)-(effort*0.15)
-Return ONLY valid JSON array, no markdown:
-[{"name":"task","urgency":80,"impact":70,"effort":40,"priority_score":79,"reason":"one sentence"}]`;
-    const text = await callAI(prompt);
-    const clean = text.replace(/```json|```/g,'').trim();
-    const newTasks = JSON.parse(clean).map(t => ({ ...t, id: uid() }));
-    p.tasks = [...p.tasks, ...newTasks].sort((a,b) => b.priority_score - a.priority_score);
-    saveState();
-    input.value = '';
-    render();
+    var mode = p.mode;
+    var modeCtx = { study:'academic/studying. Urgency=exam/deadline proximity.', work:'professional work. Urgency=client/deadline pressure.', life:'personal life. Urgency=time-sensitivity.' };
+    var prompt = 'Task prioritization AI. Mode: ' + (modeCtx[mode]||modeCtx.life) + '\nInput: "' + raw + '"\nExtract each task. Score urgency/impact/effort 1-100. priority_score=(urgency*0.5)+(impact*0.35)-(effort*0.15)\nReturn ONLY JSON array, no markdown:\n[{"name":"task","urgency":80,"impact":70,"effort":40,"priority_score":79,"reason":"one sentence"}]';
+    var text = await callAI(prompt, 1000);
+    var newTasks = JSON.parse(cleanJSON(text)).map(function(t){ return Object.assign({}, t, {id: uid()}); });
+    p.tasks = p.tasks.concat(newTasks).sort(function(a,b){ return b.priority_score - a.priority_score; });
+    saveState(); input.value = ''; render();
   } catch(e) { showError('Could not reach AI. Check your connection and try again.'); }
   finally { setLoading(false); }
 }
 
 function deleteTask(taskId, e) {
-  e.stopPropagation();
-  const p = getProject();
-  if (!p) return;
-  clearCache(p.tasks.find(t => t.id === taskId)?.name || '');
-  p.tasks = p.tasks.filter(t => t.id !== taskId);
+  if (e && e.stopPropagation) e.stopPropagation();
+  var p = getProject(); if (!p) return;
+  var found = p.tasks.find(function(t){ return t.id === taskId; });
+  if (found) clearCache(found.name);
+  p.tasks = p.tasks.filter(function(t){ return t.id !== taskId; });
   saveState(); render();
 }
-
 function clearAll() {
-  const p = getProject();
-  if (!p || !p.tasks.length) return;
-  p.tasks.forEach(t => clearCache(t.name));
-  p.tasks = [];
-  saveState(); render();
+  var p = getProject(); if (!p || !p.tasks.length) return;
+  p.tasks.forEach(function(t){ clearCache(t.name); });
+  p.tasks = []; saveState(); render();
 }
 
+// ── INLINE EXPAND (cache-first — instant if cached) ──
 function toggleExpand(taskId) {
-  const el = document.getElementById(`expand-${taskId}`);
+  var el = document.getElementById('expand-' + taskId);
   if (!el) return;
-  const isOpen = el.classList.contains('open');
-  document.querySelectorAll('.task-expand').forEach(e => e.classList.remove('open'));
+  var isOpen = el.classList.contains('open');
+  document.querySelectorAll('.task-expand').forEach(function(e){ e.classList.remove('open'); });
   if (!isOpen) { el.classList.add('open'); if (!el.dataset.loaded) loadInlineExpand(taskId, el); }
 }
-
 async function loadInlineExpand(taskId, el) {
   el.dataset.loaded = '1';
-  el.innerHTML = `<div class="expand-loading"><span class="spinner"></span> Generating context…</div>`;
-  const t = getProject()?.tasks.find(t => t.id === taskId);
+  var t = getProject() && getProject().tasks.find(function(t){ return t.id === taskId; });
   if (!t) return;
+  var cached = loadCached(t.name);
+  if (cached) {
+    el.innerHTML =
+      '<div class="time-badge">⏱ ' + esc(cached.time_estimate) + ' · ' + esc(cached.schedule) + '</div>' +
+      '<div class="expand-label">Quick steps</div>' +
+      '<ul class="expand-steps">' + cached.checklist.slice(0,3).map(function(s){ return '<li>' + esc(s.text) + '</li>'; }).join('') + '</ul>' +
+      '<button class="open-btn" onclick="event.stopPropagation();openTaskPage(\'' + taskId + '\')">Open full plan ↗</button>';
+    return;
+  }
+  el.innerHTML = '<div class="expand-loading"><span class="spinner"></span> Generating context…</div>';
   try {
-    const prompt = `Task: "${t.name}". Return ONLY valid JSON, no markdown:
-{"time_estimate":"e.g. 2h","schedule_tip":"one sentence","quick_steps":["step 1","step 2","step 3","step 4"]}`;
-    const text = await callAI(prompt, 600);
-    const d = JSON.parse(text.replace(/```json|```/g,'').trim());
-    el.innerHTML = `
-      <div class="time-badge">⏱ ${esc(d.time_estimate)} · ${esc(d.schedule_tip)}</div>
-      <div class="expand-label">Quick steps</div>
-      <ul class="expand-steps">${d.quick_steps.map(s=>`<li>${esc(s)}</li>`).join('')}</ul>
-      <button class="open-btn" onclick="event.stopPropagation();openTaskPage('${taskId}')">Open full plan ↗</button>`;
-  } catch(e) { el.innerHTML = `<div class="expand-loading" style="color:var(--red)">Failed to load.</div>`; }
+    var prompt = 'Task: "' + t.name + '". Return ONLY JSON, no markdown:\n{"time_estimate":"2h","schedule_tip":"one sentence","quick_steps":["step 1","step 2","step 3"]}';
+    var text = await callAI(prompt, 400);
+    var d = JSON.parse(cleanJSON(text));
+    el.innerHTML =
+      '<div class="time-badge">⏱ ' + esc(d.time_estimate) + ' · ' + esc(d.schedule_tip) + '</div>' +
+      '<div class="expand-label">Quick steps</div>' +
+      '<ul class="expand-steps">' + d.quick_steps.map(function(s){ return '<li>' + esc(s) + '</li>'; }).join('') + '</ul>' +
+      '<button class="open-btn" onclick="event.stopPropagation();openTaskPage(\'' + taskId + '\')">Open full plan ↗</button>';
+  } catch(e) { el.innerHTML = '<div class="expand-loading" style="color:var(--red)">Failed to load.</div>'; }
 }
 
+// ── DUE DATE ──
+function setDueDate(taskId) {
+  var p = getProject(); if (!p) return;
+  var t = p.tasks.find(function(t){ return t.id === taskId; }); if (!t) return;
+  var val = prompt('Set due date (YYYY-MM-DD) or leave blank to clear:', t.dueDate || '');
+  if (val === null) return;
+  t.dueDate = val.trim() || null;
+  if (t.dueDate) {
+    var days = Math.ceil((new Date(t.dueDate) - new Date()) / 86400000);
+    if (days <= 1) t.urgency = Math.max(t.urgency, 90);
+    else if (days <= 3) t.urgency = Math.max(t.urgency, 75);
+    else if (days <= 7) t.urgency = Math.max(t.urgency, 55);
+    t.priority_score = (t.urgency * 0.5) + (t.impact * 0.35) - (t.effort * 0.15);
+    p.tasks.sort(function(a,b){ return b.priority_score - a.priority_score; });
+  }
+  saveState(); render();
+}
+function dueBadgeClass(dueDate) {
+  if (!dueDate) return '';
+  var days = Math.ceil((new Date(dueDate) - new Date()) / 86400000);
+  if (days < 0) return 'overdue';
+  if (days <= 2) return 'due-soon';
+  return 'due-ok';
+}
+function formatDue(dueDate) {
+  if (!dueDate) return '';
+  var days = Math.ceil((new Date(dueDate) - new Date()) / 86400000);
+  if (days < 0) return Math.abs(days) + 'd overdue';
+  if (days === 0) return 'due today';
+  if (days === 1) return 'due tomorrow';
+  if (days <= 7) return days + 'd left';
+  return new Date(dueDate).toLocaleDateString('en-US',{month:'short',day:'numeric'});
+}
+
+// ── DONE ──
+function markDone(taskId) {
+  var p = getProject(); if (!p) return;
+  var t = p.tasks.find(function(t){ return t.id === taskId; }); if (!t) return;
+  t.done = !t.done;
+  if (t.done && t.isFocus) t.isFocus = false;
+  saveState(); render();
+}
+
+// ── FOCUS ──
+function setFocus(taskId) {
+  var p = getProject(); if (!p) return;
+  p.tasks.forEach(function(t){ t.isFocus = (t.id === taskId && !t.isFocus); });
+  saveState(); render();
+}
+function clearFocus() {
+  var p = getProject(); if (!p) return;
+  p.tasks.forEach(function(t){ t.isFocus = false; });
+  saveState(); render();
+}
+function openFocusTask() { if (window._focusTaskId) openTaskPage(window._focusTaskId); }
+
+// ── COMPLETED TOGGLE ──
+function toggleCompleted() {
+  var list = document.getElementById('completedList');
+  var chevron = document.getElementById('completedChevron');
+  if (!list) return;
+  list.classList.toggle('open');
+  if (chevron) chevron.classList.toggle('open');
+}
+
+// ── REPRIORITIZE ──
+async function reprioritizeAll() {
+  var p = getProject(); if (!p) return;
+  var active = p.tasks.filter(function(t){ return !t.done; });
+  if (active.length < 2) return;
+  var btn = document.getElementById('reprioBtn');
+  if (btn) { btn.disabled = true; btn.textContent = '↻ Re-ranking…'; }
+  try {
+    var mode = p.mode;
+    var modeCtx = { study:'academic context', work:'professional context', life:'personal context' };
+    var taskListStr = active.map(function(t,i){
+      return (i+1) + '. "' + t.name + '"' + (t.dueDate ? ' (due ' + t.dueDate + ')' : '');
+    }).join('\n');
+    var prompt = 'Re-prioritize these tasks in ' + (modeCtx[mode]||'personal context') + ':\n' + taskListStr + '\nReturn ONLY JSON array:\n[{"id_index":0,"urgency":80,"impact":70,"effort":40,"priority_score":79,"reason":"one sentence"}]';
+    var text = await callAI(prompt, 800);
+    var updates = JSON.parse(cleanJSON(text));
+    updates.forEach(function(u) {
+      var t = active[u.id_index];
+      if (t) { t.urgency=u.urgency; t.impact=u.impact; t.effort=u.effort; t.priority_score=u.priority_score; t.reason=u.reason; }
+    });
+    p.tasks.sort(function(a,b){ return (a.done?1:0) - (b.done?1:0) || b.priority_score - a.priority_score; });
+    saveState(); render();
+  } catch(e) {}
+  finally { if (btn) { btn.disabled=false; btn.innerHTML='↻ Re-rank'; } }
+}
+
+// ── SHARE ──
+function shareTaskPlan(taskId) {
+  var p = getProject(); if (!p) return;
+  var t = p.tasks.find(function(t){ return t.id === taskId; }); if (!t) return;
+  var cached = loadCached(t.name);
+  var sep = '────────────────────────────────────────';
+  var text = 'PRIOVRA — Task Plan\n' + sep + '\n\nProject: ' + p.name + ' (' + p.mode + ')\nTask: ' + t.name + '\nPriority Score: ' + Math.round(t.priority_score) + '\n';
+  if (t.dueDate) text += 'Due: ' + t.dueDate + '\n';
+  text += '\nWhy prioritized:\n' + t.reason + '\n';
+  if (cached) {
+    text += '\nTime Estimate: ' + cached.time_estimate + '\nSchedule: ' + cached.schedule + '\n';
+    text += '\nACTION CHECKLIST:\n' + cached.checklist.map(function(c,i){ return (i+1) + '. ' + c.text; }).join('\n') + '\n';
+    text += '\nACTION PLAN:\n' + cached.plan_steps.map(function(s,i){ return (i+1) + '. ' + s.title + ' (' + s.time + ')\n   ' + s.desc; }).join('\n\n') + '\n';
+  } else { text += '\n(Open the full plan in Priovra to generate the checklist and action plan)\n'; }
+  text += '\n' + sep + '\nGenerated by Priovra · AI Task Operator';
+  document.getElementById('shareModalTitle').textContent = 'Share: ' + t.name.slice(0,40);
+  document.getElementById('shareTextarea').value = text;
+  document.getElementById('shareModalOverlay').classList.add('open');
+}
+function closeShareModal() { document.getElementById('shareModalOverlay').classList.remove('open'); }
+function copyShareText() {
+  var ta = document.getElementById('shareTextarea');
+  navigator.clipboard.writeText(ta.value).then(function() {
+    var btn = document.getElementById('copyBtn');
+    btn.textContent = 'Copied! ✓';
+    setTimeout(function(){ btn.textContent = 'Copy to clipboard ↗'; }, 2000);
+  });
+}
+
+// ── RENDER ──
 function render() {
-  const p = getProject();
-  const tasks = p?.tasks || [];
-  const topCard = document.getElementById('topCard');
-  const taskSection = document.getElementById('taskSection');
-  const emptyState = document.getElementById('emptyState');
-  const taskList = document.getElementById('taskList');
-  const taskCount = document.getElementById('taskCountBadge');
-  if (taskCount) taskCount.textContent = tasks.length ? `${tasks.length} task${tasks.length !== 1 ? 's' : ''}` : '';
-  document.getElementById('topbarProject').textContent = p?.name || '';
-  if (!tasks.length) { topCard.style.display='none'; taskSection.style.display='none'; emptyState.style.display='block'; return; }
-  emptyState.style.display='none'; topCard.style.display='block'; taskSection.style.display='block';
-  document.getElementById('topTaskName').textContent = tasks[0].name;
-  document.getElementById('topTaskReason').textContent = tasks[0].reason;
-  taskList.innerHTML = tasks.map((t,i) => `
-    <div class="task-item${i===0?' rank-1':''}" style="animation-delay:${i*0.04}s">
-      <div class="task-main" onclick="toggleExpand('${t.id}')">
-        <span class="task-num">${String(i+1).padStart(2,'0')}</span>
-        <div class="task-body">
-          <div class="task-name">${esc(t.name)}</div>
-          <div class="task-bars">
-            <div class="bar-group"><span class="bar-label">U</span><div class="mini-bar"><div class="mini-fill fill-u" style="width:${t.urgency}%"></div></div></div>
-            <div class="bar-group"><span class="bar-label">I</span><div class="mini-bar"><div class="mini-fill fill-i" style="width:${t.impact}%"></div></div></div>
-            <div class="bar-group"><span class="bar-label">E</span><div class="mini-bar"><div class="mini-fill fill-e" style="width:${t.effort}%"></div></div></div>
-          </div>
-        </div>
-        <span class="task-score">${Math.round(t.priority_score)}</span>
-        <div class="task-actions">
-          <button class="expand-btn" onclick="event.stopPropagation();toggleExpand('${t.id}')">Details</button>
-          <button class="open-btn" onclick="event.stopPropagation();openTaskPage('${t.id}')">Open ↗</button>
-          <button class="task-del" onclick="deleteTask('${t.id}',event)">×</button>
-        </div>
-      </div>
-      <div class="task-expand" id="expand-${t.id}"></div>
-    </div>`).join('');
+  var p = getProject();
+  var allTasks = (p && p.tasks) || [];
+  var tasks = allTasks.filter(function(t){ return !t.done; });
+  var doneTasks = allTasks.filter(function(t){ return t.done; });
+  var focusTask = allTasks.find(function(t){ return t.isFocus && !t.done; });
+  var topCard = document.getElementById('topCard');
+  var taskSection = document.getElementById('taskSection');
+  var emptyState = document.getElementById('emptyState');
+  var taskList = document.getElementById('taskList');
+  var taskCount = document.getElementById('taskCountBadge');
+  var focusBanner = document.getElementById('focusBanner');
+  var completedSection = document.getElementById('completedSection');
+
+  if (taskCount) taskCount.textContent = tasks.length ? tasks.length + ' task' + (tasks.length !== 1 ? 's' : '') : '';
+  document.getElementById('topbarProject').textContent = p ? p.name : '';
+
+  if (focusTask && focusBanner) {
+    focusBanner.style.display = 'block';
+    document.getElementById('focusBannerTask').textContent = focusTask.name;
+    window._focusTaskId = focusTask.id;
+  } else if (focusBanner) { focusBanner.style.display = 'none'; }
+
+  if (!tasks.length && !doneTasks.length) {
+    topCard.style.display='none'; taskSection.style.display='none';
+    emptyState.style.display='block';
+    if (completedSection) completedSection.style.display='none';
+    return;
+  }
+  emptyState.style.display='none'; taskSection.style.display='block';
+
+  if (tasks.length) {
+    topCard.style.display='block';
+    document.getElementById('topTaskName').textContent = tasks[0].name;
+    document.getElementById('topTaskReason').textContent = tasks[0].reason;
+  } else { topCard.style.display='none'; }
+
+  taskList.innerHTML = tasks.map(function(t,i) {
+    var dueHtml = t.dueDate
+      ? '<span class="due-badge ' + dueBadgeClass(t.dueDate) + '" onclick="event.stopPropagation();setDueDate(\'' + t.id + '\')">' + formatDue(t.dueDate) + '</span>'
+      : '<span class="due-badge" onclick="event.stopPropagation();setDueDate(\'' + t.id + '\')" title="Set due date">+ due</span>';
+    return '<div class="task-item' + (i===0?' rank-1':'') + '" style="animation-delay:' + (i*0.04) + 's">' +
+      '<div class="task-main" onclick="toggleExpand(\'' + t.id + '\')">' +
+        '<span class="task-num">' + String(i+1).padStart(2,'0') + '</span>' +
+        '<div class="task-body">' +
+          '<div class="task-name">' + esc(t.name) + '</div>' +
+          '<div class="task-bars">' +
+            '<div class="bar-group"><span class="bar-label">U</span><div class="mini-bar"><div class="mini-fill fill-u" style="width:' + t.urgency + '%"></div></div></div>' +
+            '<div class="bar-group"><span class="bar-label">I</span><div class="mini-bar"><div class="mini-fill fill-i" style="width:' + t.impact + '%"></div></div></div>' +
+            '<div class="bar-group"><span class="bar-label">E</span><div class="mini-bar"><div class="mini-fill fill-e" style="width:' + t.effort + '%"></div></div></div>' +
+          '</div>' +
+        '</div>' +
+        '<span class="task-score">' + Math.round(t.priority_score) + '</span>' +
+        dueHtml +
+        '<div class="task-actions">' +
+          '<button class="expand-btn" onclick="event.stopPropagation();toggleExpand(\'' + t.id + '\')">Details</button>' +
+          '<button class="focus-btn' + (t.isFocus?' is-focus':'') + '" onclick="event.stopPropagation();setFocus(\'' + t.id + '\')" title="Set as focus">◎</button>' +
+          '<button class="done-btn' + (t.done?' is-done':'') + '" onclick="event.stopPropagation();markDone(\'' + t.id + '\')" title="Mark complete">✓</button>' +
+          '<button class="open-btn" onclick="event.stopPropagation();openTaskPage(\'' + t.id + '\')">Open ↗</button>' +
+          '<button class="task-del" onclick="deleteTask(\'' + t.id + '\',event)">×</button>' +
+        '</div>' +
+      '</div>' +
+      '<div class="task-expand" id="expand-' + t.id + '"></div>' +
+    '</div>';
+  }).join('');
+
+  if (completedSection) {
+    if (doneTasks.length) {
+      completedSection.style.display = 'block';
+      document.getElementById('completedCount').textContent = doneTasks.length;
+      var cl = document.getElementById('completedList');
+      if (cl) cl.innerHTML = doneTasks.map(function(t){
+        return '<div class="task-item done-task">' +
+          '<div class="task-main">' +
+            '<span class="task-num">✓</span>' +
+            '<div class="task-body"><div class="task-name">' + esc(t.name) + '</div></div>' +
+            '<button class="done-btn" onclick="markDone(\'' + t.id + '\')" title="Restore" style="color:var(--text-muted);border-color:var(--border)">↩</button>' +
+            '<button class="task-del" onclick="deleteTask(\'' + t.id + '\',event)">×</button>' +
+          '</div>' +
+        '</div>';
+      }).join('');
+    } else { completedSection.style.display = 'none'; }
+  }
 }
 
 // ── TASK PAGE ──
 function openTaskPage(taskId) {
+  currentTpTaskId = taskId;
   document.getElementById('taskView').style.display = 'block';
   document.body.style.overflow = 'hidden';
   renderTaskPage(taskId);
   window.scrollTo(0,0);
 }
-
 function closeTaskPage() {
   document.getElementById('taskView').style.display = 'none';
   document.body.style.overflow = '';
 }
 
 function renderTaskPage(taskId) {
-  const p = getProject();
-  const tasks = p?.tasks || [];
-  const t = tasks.find(t => t.id === taskId) || tasks[0];
+  var p = getProject();
+  var tasks = (p && p.tasks) || [];
+  var t = tasks.find(function(t){ return t.id === taskId; }) || tasks[0];
   if (!t) return;
+  currentTpTaskId = t.id;
+  var activeTasks = tasks.filter(function(tk){ return !tk.done; });
 
-  const sidebar = document.getElementById('tpSidebar');
-  sidebar.innerHTML = `<div class="tp-sidebar-label">// ${esc(p.name)}</div>` +
-    tasks.map(task => `
-      <div class="tp-task-item${task.id===t.id?' active':''}" onclick="renderTaskPage('${task.id}')">
-        <span class="tp-task-item-num">${String(tasks.indexOf(task)+1).padStart(2,'0')}</span>
-        <span class="tp-task-item-name">${esc(task.name)}</span>
-        <span class="tp-task-item-score">${Math.round(task.priority_score)}</span>
-      </div>`).join('');
+  var sidebar = document.getElementById('tpSidebar');
+  sidebar.innerHTML = '<div class="tp-sidebar-label">// ' + esc(p.name) + '</div>' +
+    activeTasks.map(function(task){
+      return '<div class="tp-task-item' + (task.id===t.id?' active':'') + '" onclick="renderTaskPage(\'' + task.id + '\')">' +
+        '<span class="tp-task-item-num">' + String(tasks.indexOf(task)+1).padStart(2,'0') + '</span>' +
+        '<span class="tp-task-item-name">' + esc(task.name) + '</span>' +
+        '<span class="tp-task-item-score">' + Math.round(task.priority_score) + '</span>' +
+      '</div>';
+    }).join('');
 
-  const main = document.getElementById('tpMain');
-  const cached = loadCached(t.name);
-  main.innerHTML = `
-    <div class="tp-task-title-row">
-      <div class="tp-eyebrow"><span class="pulse"></span> Task ${String(tasks.indexOf(t)+1).padStart(2,'0')} of ${tasks.length}</div>
-      <div class="tp-task-title">${esc(t.name)}</div>
-      <div class="tp-badges">
-        <div class="tp-badge">Priority <span>${Math.round(t.priority_score)}</span></div>
-        <div class="tp-badge">Urgency <span>${t.urgency}</span></div>
-        <div class="tp-badge">Impact <span>${t.impact}</span></div>
-        <div class="tp-badge">Effort <span>${t.effort}</span></div>
-        ${cached ? `<div class="tp-badge cached-badge" onclick="regenTask('${t.id}')">✦ cached · regenerate</div>` : ''}
-      </div>
-    </div>
-    <div class="tp-card" id="progressCard">
-      <div class="tp-card-label">Progress</div>
-      <div class="progress-wrap"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
-      <div class="progress-text" id="progressText">0 of 0 complete</div>
-    </div>
-    <div class="tp-card" id="mainContent">
-      <div class="tp-loading"><span class="spinner"></span> Checking context…</div>
-    </div>
-    <div class="tp-card" id="planCard">
-      <div class="tp-card-label">Action plan</div>
-      <div class="tp-loading"><span class="spinner"></span> Generating plan…</div>
-    </div>`;
+  var cached = loadCached(t.name);
+  var main = document.getElementById('tpMain');
+  main.innerHTML =
+    '<div class="tp-task-title-row">' +
+      '<div class="tp-eyebrow"><span class="pulse"></span> Task ' + String(tasks.indexOf(t)+1).padStart(2,'0') + ' of ' + activeTasks.length + '</div>' +
+      '<div class="tp-task-title">' + esc(t.name) + '</div>' +
+      '<div class="tp-badges">' +
+        '<div class="tp-badge">Priority <span>' + Math.round(t.priority_score) + '</span></div>' +
+        '<div class="tp-badge">Urgency <span>' + t.urgency + '</span></div>' +
+        '<div class="tp-badge">Impact <span>' + t.impact + '</span></div>' +
+        '<div class="tp-badge">Effort <span>' + t.effort + '</span></div>' +
+        (cached ? '<div class="tp-badge cached-badge" onclick="regenTask(\'' + t.id + '\')">↺ regenerate</div>' : '') +
+      '</div>' +
+    '</div>' +
+    '<div class="tp-card" id="progressCard">' +
+      '<div class="tp-card-label">Progress</div>' +
+      '<div class="progress-wrap"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>' +
+      '<div class="progress-text" id="progressText">0 of 0 complete</div>' +
+    '</div>' +
+    '<div class="tp-card" id="mainContent">' +
+      '<div class="tp-loading"><span class="spinner"></span> ' + (cached ? 'Loading…' : 'Checking context…') + '</div>' +
+    '</div>' +
+    '<div class="tp-card" id="planCard">' +
+      '<div class="tp-card-label">Action plan</div>' +
+      '<div class="tp-loading"><span class="spinner"></span> ' + (cached ? 'Loading…' : 'Generating plan…') + '</div>' +
+    '</div>' +
+    '<div class="tp-card" id="calendarPanelCard">' +
+      '<div class="tp-card-label">Schedule this task</div>' +
+      '<div class="tp-loading"><span class="spinner"></span> Loading calendar…</div>' +
+    '</div>';
 
-  if (cached) renderTaskContent(t, cached);
-  else checkContextThenLoad(t);
+  window.currentTaskObj = t;
+  if (cached) {
+    setTimeout(function(){ renderTaskContent(t, cached); }, 0);
+  } else {
+    checkContextThenLoad(t);
+  }
+  // Load calendar panel (non-blocking)
+  setTimeout(function(){ loadCalendarPanel(t); }, 100);
 }
 
 function regenTask(taskId) {
-  const t = getProject()?.tasks.find(t => t.id === taskId);
+  var t = getProject() && getProject().tasks.find(function(t){ return t.id === taskId; });
   if (t) { clearCache(t.name); renderTaskPage(taskId); }
 }
 
 async function checkContextThenLoad(t) {
   try {
-    const mode = getProject()?.mode || 'life';
-    const prompt = `Task: "${t.name}" (mode: ${mode})
-Does this task have enough context to build a specific action plan and checklist? 
-Vague = needs more info (e.g. "study", "do work"). Specific = proceed (e.g. "Study for AP Calc test Friday").
-Return ONLY valid JSON, no markdown:
-{"has_context":true,"questions":[{"text":"question","options":["A","B","C","Other"]}]}
-If has_context true, empty questions array. If false, 2-3 questions with 3-4 options each, always include "Other" as last option.`;
-    const text = await callAI(prompt, 800);
-    const d = JSON.parse(text.replace(/```json|```/g,'').trim());
+    var mode = (getProject() && getProject().mode) || 'life';
+    var prompt = 'Task: "' + t.name + '" (mode: ' + mode + ')\nEnough context for a specific plan? Vague="study","work on project". Specific="Study for AP Calc Friday".\nReturn ONLY JSON: {"has_context":true,"questions":[{"text":"q","options":["A","B","C","Other"]}]}\nIf has_context true, empty questions. If false, 2-3 questions with 3-4 options, always include "Other" last.';
+    var text = await callAI(prompt, 500);
+    var d = JSON.parse(cleanJSON(text));
     if (d.has_context) renderFullPage(t, '');
     else renderContextQuestions(t, d.questions);
   } catch(e) { renderFullPage(t, ''); }
 }
 
 function renderContextQuestions(t, questions) {
-  const card = document.getElementById('mainContent');
-  const answers = {}, otherText = {};
+  var card = document.getElementById('mainContent');
+  var answers = {}, otherText = {};
   function isOther(v) { return v && v.toLowerCase() === 'other'; }
-  function allAnswered() { return questions.every((_,i) => answers[i] && (!isOther(answers[i]) || otherText[i]?.trim())); }
-  function buildUI() {
-    card.innerHTML = `
-      <div class="tp-card-label">Before we build your plan</div>
-      <div class="ctx-wrap">
-        <p class="ctx-intro">A few quick questions to tailor everything for you.</p>
-        ${questions.map((q,qi) => `
-          <div>
-            <div class="ctx-q-label">Question ${qi+1}</div>
-            <div class="ctx-q-text">${esc(q.text)}</div>
-            <div class="ctx-options">${q.options.map(opt=>`
-              <div class="ctx-option${answers[qi]===opt?' selected':''}" onclick="selectOpt(${qi},'${opt.replace(/'/g,"\\'")}')">
-                ${esc(opt)}</div>`).join('')}</div>
-            ${isOther(answers[qi])?`<input class="ctx-other-input" id="oi-${qi}" type="text"
-              placeholder="Tell us what you're thinking…" value="${esc(otherText[qi]||'')}"
-              oninput="setOther(${qi},this.value)" onkeydown="if(event.key==='Enter')trySubmit()"/>`:''}</div>`).join('')}
-        <button class="btn-primary" id="ctxBtn" onclick="doSubmit()"
-          style="${allAnswered()?'':'opacity:0.4;pointer-events:none'}">Build my plan ↗</button>
-      </div>`;
-    const fi = questions.findIndex((_,i)=>isOther(answers[i]));
-    if (fi!==-1) { const inp=document.getElementById(`oi-${fi}`); if(inp) inp.focus(); }
+  function allAnswered() {
+    return questions.every(function(_,i){ return answers[i] && (!isOther(answers[i]) || (otherText[i] && otherText[i].trim())); });
   }
-  window.selectOpt=(qi,val)=>{ answers[qi]=val; if(!isOther(val)) delete otherText[qi]; buildUI(); };
-  window.setOther=(qi,val)=>{ otherText[qi]=val; const b=document.getElementById('ctxBtn'); if(b){const ok=allAnswered();b.style.opacity=ok?'1':'0.4';b.style.pointerEvents=ok?'auto':'none';} };
-  window.trySubmit=()=>{ if(allAnswered()) doSubmit(); };
-  window.doSubmit=()=>{
-    const ctx=questions.map((q,i)=>`${q.text}: ${isOther(answers[i])?'Other: '+otherText[i]:answers[i]}`).join(' | ');
+  function buildUI() {
+    card.innerHTML = '<div class="tp-card-label">Before we build your plan</div><div class="ctx-wrap">' +
+      '<p class="ctx-intro">A few quick questions to tailor everything for you.</p>' +
+      questions.map(function(q,qi){
+        return '<div><div class="ctx-q-label">Question ' + (qi+1) + '</div>' +
+          '<div class="ctx-q-text">' + esc(q.text) + '</div>' +
+          '<div class="ctx-options">' + q.options.map(function(opt){
+            return '<div class="ctx-option' + (answers[qi]===opt?' selected':'') + '" onclick="selectOpt(' + qi + ',\'' + opt.replace(/'/g,"\\'") + '\')">' + esc(opt) + '</div>';
+          }).join('') + '</div>' +
+          (isOther(answers[qi]) ? '<input class="ctx-other-input" id="oi-' + qi + '" type="text" placeholder="Tell us what you\'re thinking…" value="' + esc(otherText[qi]||'') + '" oninput="setOther(' + qi + ',this.value)" onkeydown="if(event.key===\'Enter\')trySubmit()"/>' : '') +
+          '</div>';
+      }).join('') +
+      '<button class="btn-primary" id="ctxBtn" onclick="doSubmit()" style="' + (allAnswered()?'':'opacity:0.4;pointer-events:none') + '">Build my plan ↗</button>' +
+      '</div>';
+    var fi = -1;
+    questions.forEach(function(_,i){ if (isOther(answers[i]) && fi===-1) fi=i; });
+    if (fi !== -1) { var inp = document.getElementById('oi-' + fi); if (inp) inp.focus(); }
+  }
+  window.selectOpt = function(qi,val){ answers[qi]=val; if(!isOther(val)) delete otherText[qi]; buildUI(); };
+  window.setOther = function(qi,val){ otherText[qi]=val; var b=document.getElementById('ctxBtn'); if(b){var ok=allAnswered();b.style.opacity=ok?'1':'0.4';b.style.pointerEvents=ok?'auto':'none';} };
+  window.trySubmit = function(){ if(allAnswered()) doSubmit(); };
+  window.doSubmit = function(){
+    var ctx = questions.map(function(q,i){ return q.text + ': ' + (isOther(answers[i]) ? 'Other: ' + otherText[i] : answers[i]); }).join(' | ');
     renderFullPage(t, ctx);
   };
   buildUI();
 }
 
 async function renderFullPage(t, extraContext) {
-  const cached = loadCached(t.name);
-  const data = cached || await generateContent(t, extraContext);
+  var cached = loadCached(t.name);
+  var data = cached || await generateContent(t, extraContext);
   if (data) renderTaskContent(t, data);
 }
 
 async function generateContent(t, extraContext) {
   try {
-    const mode = getProject()?.mode || 'life';
-    const ctxLine = extraContext ? `\nUser context: ${extraContext}` : '';
-    const prompt = `Task: "${t.name}" (mode: ${mode})${ctxLine}
-Generate a tailored task intelligence package. Return ONLY valid JSON, no markdown:
-{"time_estimate":"e.g. 3h","schedule":"scheduling tip","checklist":[{"text":"item 1"},{"text":"item 2"},{"text":"item 3"},{"text":"item 4"},{"text":"item 5"}],"plan_steps":[{"title":"Step","desc":"detail","time":"20 min"},{"title":"Step","desc":"detail","time":"30 min"},{"title":"Step","desc":"detail","time":"25 min"},{"title":"Step","desc":"detail","time":"15 min"}]}`;
-    const text = await callAI(prompt, 1400);
-    const d = JSON.parse(text.replace(/```json|```/g,'').trim());
+    var mode = (getProject() && getProject().mode) || 'life';
+    var ctxLine = extraContext ? '\nUser context: ' + extraContext : '';
+    var prompt = 'Task: "' + t.name + '" (mode: ' + mode + ')' + ctxLine + '\nGenerate tailored task package. Return ONLY JSON, no markdown:\n{"time_estimate":"3h","schedule":"tip","checklist":[{"text":"item 1"},{"text":"item 2"},{"text":"item 3"},{"text":"item 4"},{"text":"item 5"}],"plan_steps":[{"title":"Step","desc":"detail","time":"20 min"},{"title":"Step","desc":"detail","time":"30 min"},{"title":"Step","desc":"detail","time":"25 min"},{"title":"Step","desc":"detail","time":"15 min"}]}';
+    var text = await callAI(prompt, 1200);
+    var d = JSON.parse(cleanJSON(text));
     saveCache(t.name, d);
     return d;
   } catch(e) { return null; }
 }
 
 function renderTaskContent(t, d) {
-  let checkStates = d.checklist.map(() => false);
-
+  var checkStates = d.checklist.map(function(){ return false; });
   function updateProgress() {
-    const done = checkStates.filter(Boolean).length;
-    const total = checkStates.length;
-    const pct = total ? Math.round((done/total)*100) : 0;
-    const fill = document.getElementById('progressFill');
-    const txt = document.getElementById('progressText');
+    var done = checkStates.filter(Boolean).length;
+    var total = checkStates.length;
+    var pct = total ? Math.round((done/total)*100) : 0;
+    var fill = document.getElementById('progressFill');
+    var txt = document.getElementById('progressText');
     if (fill) fill.style.width = pct + '%';
-    if (txt) txt.textContent = `${done} of ${total} complete — ${pct}%`;
+    if (txt) txt.textContent = done + ' of ' + total + ' complete — ' + pct + '%';
   }
-
   function renderChecklist() {
-    const card = document.getElementById('mainContent');
+    var card = document.getElementById('mainContent');
     if (!card) return;
-    card.innerHTML = `
-      <div class="tp-card-label">Action checklist</div>
-      <div class="tp-badge" style="margin-bottom:14px;display:inline-flex;border-color:var(--mode-border);color:var(--mode-color);">⏱ ${esc(d.time_estimate)} · ${esc(d.schedule)}</div>
-      <div class="checklist">
-        ${d.checklist.map((item,ci)=>`
-          <div class="check-item${checkStates[ci]?' done':''}" onclick="toggleChk(${ci})" id="chk-${ci}">
-            <div class="check-box"><span class="check-tick">✓</span></div>
-            <div class="check-text">${esc(item.text)}</div>
-          </div>`).join('')}
-      </div>
-      <div class="add-check">
-        <input type="text" id="newChkInput" placeholder="Add a step…" onkeydown="if(event.key==='Enter')addChk()"/>
-        <button class="add-check-btn" onclick="addChk()">Add</button>
-      </div>`;
+    card.innerHTML = '<div class="tp-card-label">Action checklist</div>' +
+      '<div class="tp-badge" style="margin-bottom:14px;display:inline-flex;border-color:var(--mode-border);color:var(--mode-color);">⏱ ' + esc(d.time_estimate) + ' · ' + esc(d.schedule) + '</div>' +
+      '<div class="checklist">' +
+        d.checklist.map(function(item,ci){
+          return '<div class="check-item' + (checkStates[ci]?' done':'') + '" onclick="toggleChk(' + ci + ')" id="chk-' + ci + '">' +
+            '<div class="check-box"><span class="check-tick">✓</span></div>' +
+            '<div class="check-text">' + esc(item.text) + '</div>' +
+          '</div>';
+        }).join('') +
+      '</div>' +
+      '<div class="add-check">' +
+        '<input type="text" id="newChkInput" placeholder="Add a step…" onkeydown="if(event.key===\'Enter\')addChk()"/>' +
+        '<button class="add-check-btn" onclick="addChk()">Add</button>' +
+      '</div>';
     updateProgress();
   }
-
-  window.toggleChk = (ci) => {
+  window.toggleChk = function(ci) {
     checkStates[ci] = !checkStates[ci];
-    document.getElementById(`chk-${ci}`)?.classList.toggle('done', checkStates[ci]);
+    var el = document.getElementById('chk-' + ci);
+    if (el) el.classList.toggle('done', checkStates[ci]);
     updateProgress();
   };
-  window.addChk = () => {
-    const inp = document.getElementById('newChkInput');
-    if (!inp?.value.trim()) return;
+  window.addChk = function() {
+    var inp = document.getElementById('newChkInput');
+    if (!inp || !inp.value.trim()) return;
     d.checklist.push({ text: inp.value.trim() });
     checkStates.push(false);
     inp.value = '';
     renderChecklist();
   };
-
   renderChecklist();
-
-  const planCard = document.getElementById('planCard');
-  if (planCard) planCard.innerHTML = `
-    <div class="tp-card-label">Action plan & schedule</div>
-    <div class="plan-steps">
-      ${d.plan_steps.map((s,si)=>`
-        <div class="plan-step">
-          <div class="step-num">${si+1}</div>
-          <div>
-            <div class="step-title">${esc(s.title)}</div>
-            <div class="step-desc">${esc(s.desc)}</div>
-            <div class="step-time">⏱ ${esc(s.time)}</div>
-          </div>
-        </div>`).join('')}
-    </div>`;
+  var planCard = document.getElementById('planCard');
+  if (planCard) planCard.innerHTML = '<div class="tp-card-label">Action plan & schedule</div><div class="plan-steps">' +
+    d.plan_steps.map(function(s,si){
+      return '<div class="plan-step">' +
+        '<div class="step-num">' + (si+1) + '</div>' +
+        '<div><div class="step-title">' + esc(s.title) + '</div><div class="step-desc">' + esc(s.desc) + '</div><div class="step-time">⏱ ' + esc(s.time) + '</div></div>' +
+      '</div>';
+    }).join('') + '</div>';
 }
 
 // ── INIT ──
-document.getElementById('taskInput').addEventListener('keydown', e => {
+document.getElementById('taskInput').addEventListener('keydown', function(e) {
   if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); addTasks(); }
 });
-
 loadState();
-const p = getProject();
-applyMode(p?.mode || 'life');
-document.getElementById('topbarProject').textContent = p?.name || '';
+var initProject = getProject();
+applyMode(initProject ? initProject.mode : 'life');
+document.getElementById('topbarProject').textContent = initProject ? initProject.name : '';
 renderSidebar();
 render();
+
+
+// ── CALENDAR INTEGRATION ──
+var calConnected = false;
+var calEvents = [];
+var calFreeSlots = [];
+
+async function calInit() {
+  try {
+    var res = await fetch('/.netlify/functions/calendar?action=status');
+    var data = await res.json();
+    calConnected = data.connected;
+    updateCalBar();
+    if (calConnected) await fetchCalEvents();
+  } catch(e) { updateCalBar(); }
+}
+
+function updateCalBar() {
+  var bar = document.getElementById('calConnectBar');
+  var dot = document.getElementById('calDot');
+  var text = document.getElementById('calConnectText');
+  var btn = document.getElementById('calActionBtn');
+  var weekBtn = document.getElementById('calWeekBtn');
+  var icalBtn = document.getElementById('calIcalBtn');
+  if (!bar) return;
+  bar.style.display = 'flex';
+  if (calConnected) {
+    bar.classList.add('connected');
+    dot.classList.add('live');
+    text.innerHTML = '<strong>Google Calendar connected</strong> — AI scheduling active';
+    btn.textContent = 'Disconnect';
+    btn.style.background = 'none';
+    btn.style.border = '1px solid rgba(255,107,107,0.3)';
+    btn.style.color = 'var(--red)';
+    btn.style.boxShadow = 'none';
+    if (weekBtn) weekBtn.style.display = 'block';
+    if (icalBtn) icalBtn.style.display = 'block';
+  } else {
+    bar.classList.remove('connected');
+    dot.classList.remove('live');
+    text.innerHTML = 'Connect Google Calendar for <strong>AI-powered scheduling</strong>';
+    btn.textContent = 'Connect Google Calendar';
+    btn.style.cssText = '';
+    btn.className = 'cal-btn cal-btn-connect';
+    if (weekBtn) weekBtn.style.display = 'none';
+    if (icalBtn) icalBtn.style.display = 'none';
+  }
+}
+
+function calAction() {
+  if (calConnected) {
+    window.location.href = '/.netlify/functions/auth?action=logout';
+  } else {
+    window.location.href = '/.netlify/functions/auth?action=login';
+  }
+}
+
+async function fetchCalEvents() {
+  try {
+    var res = await fetch('/.netlify/functions/calendar', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action: 'fetch', days: 14 })
+    });
+    var data = await res.json();
+    calEvents = data.events || [];
+    calFreeSlots = data.freeSlots || [];
+  } catch(e) {}
+}
+
+function downloadIcal() {
+  window.location.href = '/.netlify/functions/calendar?action=ical';
+}
+
+// ── WEEK VIEW ──
+function openWeekView() {
+  document.getElementById('weekModalOverlay').classList.add('open');
+  renderWeekView();
+}
+function closeWeekView() {
+  document.getElementById('weekModalOverlay').classList.remove('open');
+}
+
+function renderWeekView() {
+  var el = document.getElementById('weekViewContent');
+  if (!el) return;
+  var today = new Date();
+  var days = [];
+  for (var i = 0; i < 7; i++) {
+    var d = new Date(today);
+    d.setDate(today.getDate() + i);
+    days.push(d);
+  }
+  var p = getProject();
+  var tasks = p ? p.tasks.filter(function(t){ return !t.done && t.calEventId; }) : [];
+
+  var headerHTML = '<div class="week-header">' +
+    ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].map(function(n){ return '<div class="week-day-label">' + n + '</div>'; }).join('') +
+  '</div>';
+
+  var bodyHTML = '<div class="week-body">' +
+    days.map(function(d) {
+      var isToday = d.toDateString() === today.toDateString();
+      var dayEvents = calEvents.filter(function(e) {
+        var es = new Date((e.start && (e.start.dateTime || e.start.date)) || '');
+        return es.toDateString() === d.toDateString();
+      });
+      var dayTasks = tasks.filter(function(t) {
+        return t.calEventStart && new Date(t.calEventStart).toDateString() === d.toDateString();
+      });
+      return '<div class="week-day-col' + (isToday?' today':'') + '">' +
+        '<div class="week-day-num">' + d.getDate() + '</div>' +
+        dayEvents.map(function(e){
+          var time = e.start.dateTime ? new Date(e.start.dateTime).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',hour12:true}) : 'All day';
+          return '<div class="week-event" title="' + (e.summary||'') + '">' + time + ' ' + (e.summary||'Event').slice(0,12) + '</div>';
+        }).join('') +
+        dayTasks.map(function(t){
+          var time = new Date(t.calEventStart).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',hour12:true});
+          return '<div class="week-event priovra-task" title="' + t.name + '">◎ ' + time + ' ' + t.name.slice(0,10) + '</div>';
+        }).join('') +
+      '</div>';
+    }).join('') +
+  '</div>';
+
+  var legend = '<div style="display:flex;gap:16px;margin-top:14px;font-family:\'Exo 2\',sans-serif;font-size:11px;color:var(--text-muted);">' +
+    '<span style="display:flex;align-items:center;gap:5px;"><span style="width:10px;height:10px;border-radius:2px;background:rgba(44,83,100,0.6);border-left:2px solid var(--text-muted);display:inline-block"></span>Calendar events</span>' +
+    '<span style="display:flex;align-items:center;gap:5px;"><span style="width:10px;height:10px;border-radius:2px;background:var(--mode-dim);border-left:2px solid var(--mode-color);display:inline-block"></span>Priovra tasks</span>' +
+    '</div>';
+
+  el.innerHTML = headerHTML + bodyHTML + legend;
+}
+
+// ── CALENDAR PANEL ON TASK PAGE ──
+async function loadCalendarPanel(t) {
+  var container = document.getElementById('calendarPanelCard');
+  if (!container) return;
+  if (!calConnected) {
+    container.innerHTML = '<div class="cal-panel-label">Schedule this task</div>' +
+      '<div style="font-family:\'Exo 2\',sans-serif;font-size:13px;color:var(--text-muted);text-align:center;padding:16px 0;">' +
+        'Connect Google Calendar to get AI scheduling<br>' +
+        '<button class="cal-btn cal-btn-connect" onclick="calAction()" style="margin-top:12px;">Connect Calendar</button>' +
+      '</div>';
+    return;
+  }
+  // Already scheduled?
+  if (t.calEventId) {
+    container.innerHTML = '<div class="cal-panel-label">Schedule this task <span style="font-size:7px;color:#00e8a0;">● SCHEDULED</span></div>' +
+      '<div class="cal-scheduled-badge">✓ Scheduled: ' + formatCalTime(t.calEventStart) + ' → ' + formatCalTime(t.calEventEnd) + '</div>' +
+      '<div style="display:flex;gap:8px;margin-top:12px;">' +
+        '<button class="cal-btn-secondary" style="flex:1" onclick="rescheduleTask(\'' + t.id + '\')">Reschedule</button>' +
+        '<button class="cal-btn-secondary" style="flex:1;color:var(--red);border-color:rgba(255,107,107,0.3);" onclick="removeFromCal(\'' + t.id + '\')">Remove</button>' +
+      '</div>';
+    return;
+  }
+  container.innerHTML = '<div class="cal-panel-label">Finding best time…</div>' +
+    '<div class="tp-loading"><span class="spinner"></span> Analyzing your calendar…</div>';
+  try {
+    var res = await fetch('/.netlify/functions/calendar', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action: 'suggest', task: t })
+    });
+    var data = await res.json();
+    var sg = data.suggestion;
+    renderCalPanel(container, t, sg);
+  } catch(e) {
+    container.innerHTML = '<div class="cal-panel-label">Schedule this task</div>' +
+      '<div style="font-family:\'Exo 2\',sans-serif;font-size:12px;color:var(--red);">Could not load suggestions. Try again.</div>' +
+      '<button class="cal-btn-secondary" style="margin-top:8px;" onclick="loadCalendarPanel(currentTaskObj)">Retry</button>';
+  }
+}
+
+function renderCalPanel(container, t, sg) {
+  var alts = (sg.alternative_slots || []).slice(0,2);
+  container.innerHTML = '<div class="cal-panel-label">Best time to schedule</div>' +
+    (sg.scheduling_tip ? '<div class="cal-tip">💡 ' + sg.scheduling_tip + '</div>' : '') +
+    '<div class="cal-slot-badge">Best match</div>' +
+    '<div class="cal-slot best" onclick="scheduleTask(\'' + t.id + '\',\'' + sg.best_slot.start + '\',\'' + sg.best_slot.end + '\',\'' + (sg.calendar_title||t.name).replace(/'/g,"\\'") + '\',\'' + (sg.calendar_description||'').replace(/'/g,"\\'").slice(0,100) + '\')">' +
+      '<div class="cal-slot-time">' + formatCalRange(sg.best_slot.start, sg.best_slot.end) + '</div>' +
+      '<div class="cal-slot-reason">' + sg.best_slot.reason + '</div>' +
+    '</div>' +
+    (alts.length ? '<div style="font-size:7px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-muted);margin:10px 0 6px;">Alternatives</div>' : '') +
+    alts.map(function(s) {
+      return '<div class="cal-slot" onclick="scheduleTask(\'' + t.id + '\',\'' + s.start + '\',\'' + s.end + '\',\'' + (sg.calendar_title||t.name).replace(/'/g,"\\'") + '\',\'\')">' +
+        '<div class="cal-slot-time">' + formatCalRange(s.start, s.end) + '</div>' +
+        '<div class="cal-slot-reason">' + s.reason + '</div>' +
+      '</div>';
+    }).join('') +
+    '<button class="cal-schedule-btn" id="calSchedBtn" onclick="scheduleTask(\'' + t.id + '\',\'' + sg.best_slot.start + '\',\'' + sg.best_slot.end + '\',\'' + (sg.calendar_title||t.name).replace(/'/g,"\\'") + '\',\'' + (sg.calendar_description||'').replace(/'/g,"\\'").slice(0,100) + '\')" style="margin-top:12px;">Add to Calendar ↗</button>';
+}
+
+async function scheduleTask(taskId, start, end, title, desc) {
+  var p = getProject(); if (!p) return;
+  var t = p.tasks.find(function(t){ return t.id === taskId; }); if (!t) return;
+  var btn = document.getElementById('calSchedBtn');
+  if (btn) { btn.disabled = true; btn.textContent = 'Scheduling…'; }
+  try {
+    var res = await fetch('/.netlify/functions/calendar', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        action: 'create',
+        event: {
+          summary: title || t.name,
+          description: (desc || t.reason || '') + '\n\nScheduled by Priovra · AI Task Operator\nPriority: ' + Math.round(t.priority_score),
+          start: { dateTime: start, timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone },
+          end: { dateTime: end, timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone },
+          colorId: '7'
+        }
+      })
+    });
+    var created = await res.json();
+    if (created.id) {
+      t.calEventId = created.id;
+      t.calEventStart = start;
+      t.calEventEnd = end;
+      saveState();
+      var container = document.getElementById('calendarPanelCard');
+      if (container) loadCalendarPanel(t);
+      await fetchCalEvents();
+    }
+  } catch(e) { if (btn) { btn.disabled=false; btn.textContent='Add to Calendar ↗'; } }
+}
+
+async function removeFromCal(taskId) {
+  var p = getProject(); if (!p) return;
+  var t = p.tasks.find(function(t){ return t.id === taskId; }); if (!t || !t.calEventId) return;
+  try {
+    await fetch('/.netlify/functions/calendar', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action: 'delete', eventId: t.calEventId })
+    });
+    delete t.calEventId; delete t.calEventStart; delete t.calEventEnd;
+    saveState();
+    var container = document.getElementById('calendarPanelCard');
+    if (container) loadCalendarPanel(t);
+  } catch(e) {}
+}
+
+async function rescheduleTask(taskId) {
+  var p = getProject(); if (!p) return;
+  var t = p.tasks.find(function(t){ return t.id === taskId; }); if (!t) return;
+  if (t.calEventId) {
+    await removeFromCal(taskId);
+    t = p.tasks.find(function(t){ return t.id === taskId; });
+  }
+  var container = document.getElementById('calendarPanelCard');
+  if (container) loadCalendarPanel(t);
+}
+
+function formatCalTime(iso) {
+  if (!iso) return '';
+  return new Date(iso).toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric',hour:'numeric',minute:'2-digit',hour12:true});
+}
+function formatCalRange(start, end) {
+  var s = new Date(start);
+  var e = new Date(end);
+  var sStr = s.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'}) + ' · ' +
+    s.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',hour12:true});
+  var eStr = e.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',hour12:true});
+  return sStr + ' – ' + eStr;
+}
+
+// Handle OAuth callback URL params
+(function() {
+  var urlParams = new URLSearchParams(window.location.search);
+  var cal = urlParams.get('cal');
+  if (cal === 'connected') {
+    calConnected = true;
+    updateCalBar();
+    fetchCalEvents();
+    window.history.replaceState({}, document.title, window.location.pathname);
+  } else if (cal === 'disconnected') {
+    calConnected = false;
+    updateCalBar();
+    window.history.replaceState({}, document.title, window.location.pathname);
+  }
+})();
+
+// Init calendar on load
+calInit();
+
 </script>
 </body>
 </html>
