@@ -450,6 +450,45 @@ textarea:focus{border-color:var(--mode-border);box-shadow:inset 0 2px 8px rgba(0
 .errand-task-row{font-family:'Exo 2',sans-serif;font-size:13px;color:var(--text-dim);padding:4px 0;border-bottom:1px solid rgba(255,255,255,0.04);}
 .errand-task-row:last-child{border-bottom:none;}
 
+
+/* ── MANUAL CHECKLIST + AI GEN ── */
+.manual-checklist-prompt{padding:14px 0 10px;}
+.manual-prompt-text{font-family:'Orbitron',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.08em;color:var(--text);margin-bottom:6px;}
+.manual-prompt-sub{font-family:'Exo 2',sans-serif;font-size:12px;color:var(--text-muted);line-height:1.5;}
+.ai-gen-divider{display:flex;align-items:center;gap:12px;margin:16px 0 12px;}
+.ai-gen-divider::before,.ai-gen-divider::after{content:'';flex:1;height:1px;background:rgba(255,255,255,0.08);}
+.ai-gen-divider-text{font-family:'Exo 2',sans-serif;font-size:11px;color:var(--text-muted);white-space:nowrap;}
+.ai-gen-btn{width:100%;padding:12px;background:linear-gradient(145deg,rgba(44,83,100,0.7),rgba(32,58,67,0.5));border:1px solid var(--mode-border);border-radius:var(--radius);font-family:'Orbitron',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.16em;color:var(--mode-color);cursor:pointer;transition:all 0.15s;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.08);}
+.ai-gen-btn:hover{background:var(--mode-dim);box-shadow:0 0 16px var(--mode-dim),inset 0 1px 0 rgba(255,255,255,0.1);}
+.ai-gen-btn:disabled{opacity:0.4;cursor:not-allowed;}
+.ai-gen-icon{font-size:12px;}
+
+
+/* ── CALENDAR HERO CARD ── */
+.cal-hero-card{display:flex;align-items:center;justify-content:space-between;gap:20px;background:linear-gradient(145deg,rgba(0,232,160,0.1),rgba(32,58,67,0.5));border:1px solid rgba(0,232,160,0.25);border-radius:var(--radius-lg);padding:20px 24px;margin-bottom:24px;box-shadow:0 4px 20px rgba(0,0,0,0.2),inset 0 1px 0 rgba(255,255,255,0.08);position:relative;overflow:hidden;}
+.cal-hero-card::before{content:'';position:absolute;top:-1px;left:20px;right:20px;height:1px;background:linear-gradient(90deg,transparent,rgba(0,232,160,0.5),transparent);}
+.cal-hero-left{display:flex;align-items:center;gap:14px;}
+.cal-hero-icon{font-size:28px;flex-shrink:0;}
+.cal-hero-title{font-size:13px;font-weight:700;letter-spacing:0.1em;color:var(--text);margin-bottom:4px;}
+.cal-hero-sub{font-family:'Exo 2',sans-serif;font-size:12px;color:var(--text-dim);line-height:1.5;max-width:360px;}
+@media(max-width:600px){.cal-hero-card{flex-direction:column;align-items:flex-start;}.cal-btn-connect{width:100%;justify-content:center;}}
+
+
+/* ── START NOW ── */
+.start-now-hero{display:flex;align-items:center;justify-content:space-between;gap:14px;background:linear-gradient(145deg,rgba(0,232,160,0.12),rgba(32,58,67,0.5));border:1px solid rgba(0,232,160,0.3);border-radius:var(--radius);padding:16px 18px;box-shadow:0 4px 16px rgba(0,0,0,0.15),inset 0 1px 0 rgba(255,255,255,0.1);}
+.start-now-left{}
+.start-now-title{font-size:13px;font-weight:700;letter-spacing:0.06em;color:#00e8a0;margin-bottom:3px;}
+.start-now-sub{font-family:'Exo 2',sans-serif;font-size:11px;color:var(--text-muted);}
+.start-now-right{display:flex;flex-direction:column;align-items:flex-end;gap:8px;flex-shrink:0;}
+.dur-pills{display:flex;gap:5px;}
+.dur-pill{font-family:'Orbitron',sans-serif;font-size:8px;font-weight:600;letter-spacing:0.08em;padding:5px 10px;border-radius:6px;border:1px solid rgba(0,232,160,0.25);background:rgba(0,232,160,0.06);color:#00e8a0;cursor:pointer;transition:all 0.15s;}
+.dur-pill:hover{background:rgba(0,232,160,0.15);}
+.dur-pill.active{background:rgba(0,232,160,0.2);border-color:rgba(0,232,160,0.5);box-shadow:0 0 8px rgba(0,232,160,0.2);}
+.start-now-btn{background:linear-gradient(145deg,#00e8a0,#00b880);color:#0a1920;font-family:'Orbitron',sans-serif;font-size:9px;font-weight:800;letter-spacing:0.14em;padding:10px 20px;border-radius:var(--radius);border:none;cursor:pointer;transition:all 0.15s;text-transform:uppercase;box-shadow:0 4px 14px rgba(0,232,160,0.3),inset 0 1px 0 rgba(255,255,255,0.3);white-space:nowrap;}
+.start-now-btn:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(0,232,160,0.45);}
+.start-now-btn:active{transform:scale(0.97);}
+@media(max-width:480px){.start-now-hero{flex-direction:column;align-items:flex-start;}.start-now-right{align-items:flex-start;width:100%;}.start-now-btn{width:100%;text-align:center;}}
+
 </style>
 </head>
 <body>
@@ -512,15 +551,29 @@ textarea:focus{border-color:var(--mode-border);box-shadow:inset 0 2px 8px rgba(0
     </div>
 
     <div class="content" id="homeContent">
-      <div id="calConnectBar" class="cal-connect-bar" style="display:none">
-        <div class="cal-connect-info">
-          <div class="cal-dot" id="calDot"></div>
-          <div class="cal-connect-text" id="calConnectText">Connect Google Calendar for AI scheduling</div>
+      <div id="calConnectBar" style="display:none">
+        <!-- Disconnected hero state -->
+        <div id="calHeroCard" class="cal-hero-card">
+          <div class="cal-hero-left">
+            <div class="cal-hero-icon">📅</div>
+            <div>
+              <div class="cal-hero-title">Connect your calendar</div>
+              <div class="cal-hero-sub">Priovra reads your schedule and finds the perfect time for every task — automatically.</div>
+            </div>
+          </div>
+          <button class="cal-btn cal-btn-connect" id="calActionBtn" onclick="calAction()">Connect Google Calendar →</button>
         </div>
-        <div style="display:flex;gap:8px;">
-          <button class="cal-btn-secondary" id="calWeekBtn" onclick="openWeekView()" style="display:none">Week view</button>
-          <button class="cal-btn-secondary" id="calIcalBtn" onclick="downloadIcal()" style="display:none" title="Export for Apple Calendar">Apple Cal ↓</button>
-          <button class="cal-btn cal-btn-connect" id="calActionBtn" onclick="calAction()">Connect Google Calendar</button>
+        <!-- Connected compact state -->
+        <div id="calCompactBar" class="cal-connect-bar connected" style="display:none">
+          <div class="cal-connect-info">
+            <div class="cal-dot live" id="calDot"></div>
+            <div class="cal-connect-text" id="calConnectText"><strong>Google Calendar connected</strong> — AI scheduling active</div>
+          </div>
+          <div style="display:flex;gap:8px;">
+            <button class="cal-btn-secondary" id="calWeekBtn" onclick="openWeekView()">Week view</button>
+            <button class="cal-btn-secondary" id="calIcalBtn" onclick="downloadIcal()" title="Export for Apple Calendar">Apple Cal ↓</button>
+            <button class="cal-btn-secondary" onclick="calAction()" style="color:var(--red);border-color:rgba(255,107,107,0.3);">Disconnect</button>
+          </div>
         </div>
       </div>
       <!-- ── STUDY MODE PANEL ── -->
@@ -1178,8 +1231,21 @@ function renderTaskPage(taskId) {
   } else {
     checkContextThenLoad(t);
   }
-  // Load calendar panel (non-blocking)
-  setTimeout(function(){ loadCalendarPanel(t); }, 100);
+  // Load calendar panel (non-blocking) — show Start Now immediately, AI on demand
+  setTimeout(function(){
+    window._currentCalTask = t;
+    window._activeDur = window._activeDur || 60;
+    var container = document.getElementById('calendarPanelCard');
+    if (container) {
+      if (!calConnected) {
+        loadCalendarPanel(t);
+      } else if (t.calEventId) {
+        loadCalendarPanel(t);
+      } else {
+        renderStartNow(container, t);
+      }
+    }
+  }, 100);
 }
 
 function regenTask(taskId) {
@@ -1214,7 +1280,7 @@ function renderContextQuestions(t, questions) {
           '<div class="ctx-options">' + q.options.map(function(opt){
             return '<div class="ctx-option' + (answers[qi]===opt?' selected':'') + '" onclick="selectOpt(' + qi + ',\'' + opt.replace(/'/g,"\\'") + '\')">' + esc(opt) + '</div>';
           }).join('') + '</div>' +
-          (isOther(answers[qi]) ? '<input class="ctx-other-input" id="oi-' + qi + '" type="text" placeholder="Tell us what you\'re thinking…" value="' + esc(otherText[qi]||'') + '" oninput="setOther(' + qi + ',this.value)" onkeydown="if(event.key===\'Enter\')trySubmit()"/>' : '') +
+          (isOther(answers[qi]) ? '<input class="ctx-other-input" id="oi-' + qi + '" type="text" placeholder="Tell us what you are thinking…" value="' + esc(otherText[qi]||'') + '" oninput="setOther(' + qi + ',this.value)" />' : '') +
           '</div>';
       }).join('') +
       '<button class="btn-primary" id="ctxBtn" onclick="doSubmit()" style="' + (allAnswered()?'':'opacity:0.4;pointer-events:none') + '">Build my plan ↗</button>' +
@@ -1235,8 +1301,94 @@ function renderContextQuestions(t, questions) {
 
 async function renderFullPage(t, extraContext) {
   var cached = loadCached(t.name);
-  var data = cached || await generateContent(t, extraContext);
-  if (data) renderTaskContent(t, data);
+  if (cached) {
+    renderTaskContent(t, cached);
+  } else {
+    // Show manual checklist first — AI generation is opt-in
+    renderManualChecklist(t, extraContext);
+  }
+}
+
+function renderManualChecklist(t, extraContext) {
+  var mainCard = document.getElementById('mainContent');
+  var planCard = document.getElementById('planCard');
+  if (!mainCard) return;
+
+  mainCard.innerHTML =
+    '<div class="tp-card-label">Action checklist</div>' +
+    '<div class="manual-checklist-prompt">' +
+      '<div class="manual-prompt-text">What steps will it take to complete this task?</div>' +
+      '<div class="manual-prompt-sub">Add your own steps — you know your workflow best. Or let AI suggest a plan.</div>' +
+    '</div>' +
+    '<div class="checklist" id="manualChecklistItems"></div>' +
+    '<div class="add-check" style="margin-top:10px;">' +
+      '<input type="text" id="newChkInput" placeholder="Add a step and press Enter…" />' +
+      '<button class="add-check-btn" onclick="addManualChk()">Add</button>' +
+    '</div>' +
+    '<div class="ai-gen-divider">' +
+      '<span class="ai-gen-divider-text">or</span>' +
+    '</div>' +
+    '<button class="ai-gen-btn" id="aiGenBtn">' +
+      '<span class="ai-gen-icon">✦</span> Generate plan with AI' +
+    '</button>';
+
+  if (planCard) planCard.innerHTML = '<div class="tp-card-label">Action plan</div>' +
+    '<div style="font-family:var(--font-sans);font-size:13px;color:var(--text-muted);padding:4px 0;">Build your checklist first, then AI will suggest additions.</div>';
+
+  // Wire up manual checklist
+  var manualItems = [];
+  window.addManualChk = function() {
+    var inp = document.getElementById('newChkInput');
+    if (!inp || !inp.value.trim()) return;
+    manualItems.push(inp.value.trim());
+    inp.value = '';
+    renderManualItems();
+    inp.focus();
+  };
+
+  function renderManualItems() {
+    var el = document.getElementById('manualChecklistItems');
+    if (!el) return;
+    el.innerHTML = manualItems.map(function(item, i) {
+      return '<div class="check-item" id="mchk-' + i + '">' +
+        '<div class="check-box"></div>' +
+        '<div class="check-text">' + esc(item) + '</div>' +
+        '<button style="background:none;border:none;cursor:pointer;color:var(--text-muted);font-size:14px;margin-left:auto;padding:0 4px;" onclick="removeManualChk(' + i + ')">×</button>' +
+      '</div>';
+    }).join('');
+    // Show plan generator once they have at least 2 steps
+    var genBtn = document.querySelector('.ai-gen-btn');
+    if (genBtn && manualItems.length >= 2) {
+      genBtn.textContent = '';
+      genBtn.innerHTML = '<span class="ai-gen-icon">✦</span> Build plan from my ' + manualItems.length + ' steps';
+    }
+  }
+
+  window.removeManualChk = function(i) {
+    manualItems.splice(i, 1);
+    renderManualItems();
+  };
+
+  window.generateWithAI = async function(taskId, extraCtx) {
+    var p = getProject(); if (!p) return;
+    var task = p.tasks.find(function(t){ return t.id === taskId; }); if (!task) return;
+    var btn = document.querySelector('.ai-gen-btn');
+    if (btn) { btn.disabled = true; btn.innerHTML = '<span class="spinner"></span> Generating…'; }
+    var userSteps = manualItems.length ? '\nUser steps: ' + manualItems.join(', ') : '';
+    var data = await generateContent(task, (extraCtx||'') + userSteps);
+    if (data) {
+      // Merge user's manual steps into the AI checklist
+      if (manualItems.length) {
+        var merged = manualItems.map(function(s){ return {text:s}; });
+        data.checklist.forEach(function(ai) {
+          var exists = manualItems.some(function(m){ return m.toLowerCase().includes(ai.text.toLowerCase().slice(0,15)); });
+          if (!exists) merged.push(ai);
+        });
+        data.checklist = merged;
+      }
+      renderTaskContent(task, data);
+    }
+  };
 }
 
 async function generateContent(t, extraContext) {
@@ -1276,7 +1428,7 @@ function renderTaskContent(t, d) {
         }).join('') +
       '</div>' +
       '<div class="add-check">' +
-        '<input type="text" id="newChkInput" placeholder="Add a step…" onkeydown="if(event.key===\'Enter\')addChk()"/>' +
+        '<input type="text" id="newChkInput" placeholder="Add a step…" />' +
         '<button class="add-check-btn" onclick="addChk()">Add</button>' +
       '</div>';
     updateProgress();
@@ -1305,6 +1457,29 @@ function renderTaskContent(t, d) {
       '</div>';
     }).join('') + '</div>';
 }
+
+
+// AI gen button click handler
+document.addEventListener('click', function(e) {
+  if (e.target && (e.target.id === 'aiGenBtn' || e.target.closest('#aiGenBtn'))) {
+    var t = window.currentTaskObj;
+    if (t && typeof generateWithAI === 'function') generateWithAI(t.id, '');
+  }
+});
+
+// Enter key for dynamically created checklist inputs
+document.addEventListener('keydown', function(e) {
+  if (e.key !== 'Enter') return;
+  if (e.target && e.target.id === 'newChkInput') {
+    e.preventDefault();
+    if (typeof addManualChk === 'function' && document.querySelector('.manual-prompt-text')) addManualChk();
+    else if (typeof addChk === 'function') addChk();
+  }
+  if (e.target && e.target.id && e.target.id.startsWith('oi-')) {
+    e.preventDefault();
+    if (typeof trySubmit === 'function') trySubmit();
+  }
+});
 
 // ── INIT ──
 document.getElementById('taskInput').addEventListener('keydown', function(e) {
@@ -1335,33 +1510,16 @@ async function calInit() {
 
 function updateCalBar() {
   var bar = document.getElementById('calConnectBar');
-  var dot = document.getElementById('calDot');
-  var text = document.getElementById('calConnectText');
-  var btn = document.getElementById('calActionBtn');
-  var weekBtn = document.getElementById('calWeekBtn');
-  var icalBtn = document.getElementById('calIcalBtn');
+  var hero = document.getElementById('calHeroCard');
+  var compact = document.getElementById('calCompactBar');
   if (!bar) return;
-  bar.style.display = 'flex';
+  bar.style.display = 'block';
   if (calConnected) {
-    bar.classList.add('connected');
-    dot.classList.add('live');
-    text.innerHTML = '<strong>Google Calendar connected</strong> — AI scheduling active';
-    btn.textContent = 'Disconnect';
-    btn.style.background = 'none';
-    btn.style.border = '1px solid rgba(255,107,107,0.3)';
-    btn.style.color = 'var(--red)';
-    btn.style.boxShadow = 'none';
-    if (weekBtn) weekBtn.style.display = 'block';
-    if (icalBtn) icalBtn.style.display = 'block';
+    if (hero) hero.style.display = 'none';
+    if (compact) compact.style.display = 'flex';
   } else {
-    bar.classList.remove('connected');
-    dot.classList.remove('live');
-    text.innerHTML = 'Connect Google Calendar for <strong>AI-powered scheduling</strong>';
-    btn.textContent = 'Connect Google Calendar';
-    btn.style.cssText = '';
-    btn.className = 'cal-btn cal-btn-connect';
-    if (weekBtn) weekBtn.style.display = 'none';
-    if (icalBtn) icalBtn.style.display = 'none';
+    if (hero) hero.style.display = 'flex';
+    if (compact) compact.style.display = 'none';
   }
 }
 
@@ -1452,7 +1610,8 @@ async function loadCalendarPanel(t) {
   var container = document.getElementById('calendarPanelCard');
   if (!container) return;
   if (!calConnected) {
-    container.innerHTML = '<div class="cal-panel-label">Schedule this task</div>' +
+    container.innerHTML =
+      '<div class="cal-panel-label">Schedule this task</div>' +
       '<div style="font-family:\'Exo 2\',sans-serif;font-size:13px;color:var(--text-muted);text-align:center;padding:16px 0;">' +
         'Connect Google Calendar to get AI scheduling<br>' +
         '<button class="cal-btn cal-btn-connect" onclick="calAction()" style="margin-top:12px;">Connect Calendar</button>' +
@@ -1486,9 +1645,91 @@ async function loadCalendarPanel(t) {
   }
 }
 
+function startNow(taskId, durationMins) {
+  var p = getProject(); if (!p) return;
+  var t = p.tasks.find(function(t){ return t.id===taskId; }); if (!t) return;
+  var now = new Date();
+  var end = new Date(now.getTime() + (durationMins||60)*60000);
+  scheduleTask(taskId, now.toISOString(), end.toISOString(), t.name, t.reason||'');
+}
+
+function renderStartNow(container, t) {
+  var durations = [30,60,90,120];
+  var activeDur = window._activeDur || 60;
+  container.innerHTML =
+    '<div class="cal-panel-label">Schedule this task</div>' +
+    // ── START NOW hero ──
+    '<div class="start-now-hero">' +
+      '<div class="start-now-left">' +
+        '<div class="start-now-title">Start right now</div>' +
+        '<div class="start-now-sub">Blocks time in your calendar immediately</div>' +
+      '</div>' +
+      '<div class="start-now-right">' +
+        '<div class="dur-pills">' +
+          durations.map(function(d){
+            return '<button class="dur-pill' + (activeDur===d?' active':'') + '" onclick="window._activeDur=' + d + ';renderStartNow(document.getElementById(\'calendarPanelCard\'),window._currentCalTask)">' +
+              (d<60?d+'m':d/60+'h') + '</button>';
+          }).join('') +
+        '</div>' +
+        '<button class="start-now-btn" onclick="startNow(\''+t.id+'\',window._activeDur||60)">' +
+          '▶ Start ' + (activeDur<60?activeDur+'m':activeDur/60+'h') + ' session' +
+        '</button>' +
+      '</div>' +
+    '</div>' +
+    // ── Divider ──
+    '<div class="ai-gen-divider" style="margin:16px 0;"><span class="ai-gen-divider-text">or find the best future slot</span></div>' +
+    // ── AI suggest button ──
+    '<button class="ai-gen-btn" id="aiSuggestBtn" onclick="loadAISuggestions(\''+t.id+'\')">' +
+      '<span class="ai-gen-icon">✦</span> Find best time this week' +
+    '</button>';
+}
+
+async function loadAISuggestions(taskId) {
+  var p = getProject(); if (!p) return;
+  var t = p.tasks.find(function(t){ return t.id===taskId; }); if (!t) return;
+  var btn = document.getElementById('aiSuggestBtn');
+  if (btn) { btn.disabled=true; btn.innerHTML='<span class="spinner"></span> Analyzing calendar…'; }
+  try {
+    var res = await fetch('/.netlify/functions/calendar', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ action:'suggest', task:t })
+    });
+    var data = await res.json();
+    var container = document.getElementById('calendarPanelCard');
+    if (container && data.suggestion) renderCalPanel(container, t, data.suggestion);
+  } catch(e) {
+    if (btn) { btn.disabled=false; btn.innerHTML='<span class="ai-gen-icon">✦</span> Find best time this week'; }
+  }
+}
+
 function renderCalPanel(container, t, sg) {
   var alts = (sg.alternative_slots || []).slice(0,2);
-  container.innerHTML = '<div class="cal-panel-label">Best time to schedule</div>' +
+  var activeDur = window._activeDur || 60;
+  var durations = [30,60,90,120];
+  container.innerHTML =
+    '<div class="cal-panel-label">Schedule this task</div>' +
+    // ── START NOW stays at top always ──
+    '<div class="start-now-hero" style="margin-bottom:14px;">' +
+      '<div class="start-now-left">' +
+        '<div class="start-now-title">Start right now</div>' +
+        '<div class="start-now-sub">Block time immediately</div>' +
+      '</div>' +
+      '<div class="start-now-right">' +
+        '<div class="dur-pills">' +
+          durations.map(function(d){
+            return '<button class="dur-pill' + (activeDur===d?' active':'') + '" onclick="window._activeDur='+d+';renderCalPanel(document.getElementById(\'calendarPanelCard\'),window._currentCalTask,window._currentSuggestion)">' +
+              (d<60?d+'m':d/60+'h') + '</button>';
+          }).join('') +
+        '</div>' +
+        '<button class="start-now-btn" onclick="startNow(\''+t.id+'\',window._activeDur||60)">' +
+          '▶ Now' +
+        '</button>' +
+      '</div>' +
+    '</div>' +
+    '<div class="ai-gen-divider" style="margin:12px 0;"><span class="ai-gen-divider-text">AI suggested slots</span></div>';
+
+  window._currentSuggestion = sg;
+  container.innerHTML +=
     (sg.scheduling_tip ? '<div class="cal-tip">💡 ' + sg.scheduling_tip + '</div>' : '') +
     '<div class="cal-slot-badge">Best match</div>' +
     '<div class="cal-slot best" onclick="scheduleTask(\'' + t.id + '\',\'' + sg.best_slot.start + '\',\'' + sg.best_slot.end + '\',\'' + (sg.calendar_title||t.name).replace(/'/g,"\\'") + '\',\'' + (sg.calendar_description||'').replace(/'/g,"\\'").slice(0,100) + '\')">' +
@@ -1976,68 +2217,124 @@ loadInlineExpand = async function(taskId, el) {
 
 function appendModeControls(taskId, el) {
   var p = getProject(); if (!p) return;
-  var t = p.tasks.find(function(t){ return t.id===taskId; }); if (!t) return;
+  var t = p.tasks.find(function(t){ return t.id === taskId; }); if (!t) return;
   var mode = p.mode;
+
   var extra = document.createElement('div');
-  extra.style.marginTop = '12px';
-  extra.style.borderTop = '1px solid rgba(255,255,255,0.06)';
-  extra.style.paddingTop = '12px';
-  extra.style.display = 'flex';
-  extra.style.flexWrap = 'wrap';
-  extra.style.gap = '8px';
-  extra.style.alignItems = 'center';
+  extra.style.cssText = 'margin-top:12px;border-top:1px solid rgba(255,255,255,0.06);padding-top:12px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;';
 
   if (mode === 'study') {
     // Subject picker
-    var subjectHtml = '<div style="display:flex;gap:5px;flex-wrap:wrap;align-items:center;">' +
-      '<span style="font-family:Orbitron,sans-serif;font-size:7px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-muted);margin-right:2px;">Subject</span>' +
-      SUBJECTS.map(function(s) {
-        return '<span class="subject-tag ' + (SUBJECT_COLORS[s]||'subject-other') + (t.subject===s?' '+'selected-tag':'') + '" onclick="setTaskSubject(\'' + taskId + '\',\'' + s + '\')" style="' + (t.subject===s?'box-shadow:0 0 8px currentColor;':'') + '">' + s + '</span>';
-      }).join('') + '</div>';
-    extra.innerHTML += subjectHtml;
+    var subjWrap = document.createElement('div');
+    subjWrap.style.cssText = 'display:flex;gap:5px;flex-wrap:wrap;align-items:center;width:100%;';
+    var subjLabel = document.createElement('span');
+    subjLabel.style.cssText = 'font-family:Orbitron,sans-serif;font-size:7px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-muted);margin-right:2px;';
+    subjLabel.textContent = 'Subject';
+    subjWrap.appendChild(subjLabel);
+    SUBJECTS.forEach(function(s) {
+      var tag = document.createElement('span');
+      tag.className = 'subject-tag ' + (SUBJECT_COLORS[s] || 'subject-other');
+      tag.textContent = s;
+      if (t.subject === s) tag.style.boxShadow = '0 0 8px currentColor';
+      tag.addEventListener('click', function(){ setTaskSubject(taskId, s); });
+      subjWrap.appendChild(tag);
+    });
+    extra.appendChild(subjWrap);
+
     // Grade impact
-    extra.innerHTML += renderGradeImpact(taskId, t.gradeImpact || 0);
-    // Spaced rep (if task was completed)
+    var impactWrap = document.createElement('div');
+    impactWrap.className = 'impact-bar-wrap';
+    impactWrap.innerHTML = '<span class="impact-label">Grade impact</span>';
+    var pips = document.createElement('div');
+    pips.className = 'impact-pips';
+    for (var p2 = 1; p2 <= 5; p2++) {
+      (function(pip) {
+        var d = document.createElement('div');
+        d.className = 'impact-pip' + ((t.gradeImpact||0) >= pip ? ' active-'+pip : '');
+        d.title = pip + '/5';
+        d.addEventListener('click', function(){ setTaskImpact(taskId, pip); });
+        pips.appendChild(d);
+      })(p2);
+    }
+    impactWrap.appendChild(pips);
+    extra.appendChild(impactWrap);
+
+    // Spaced rep
     if (t.done) {
-      extra.innerHTML += '<button class="spaced-rep-btn" onclick="scheduleSpacedRep(\'' + taskId + '\',\'' + t.name.replace(/'/g,"\\'") + '\');this.textContent=\'✓ Reminder set\'">🔁 Set review reminder</button>';
+      var srpBtn = document.createElement('button');
+      srpBtn.className = 'spaced-rep-btn';
+      srpBtn.textContent = '🔁 Set review reminder';
+      srpBtn.addEventListener('click', function(){
+        scheduleSpacedRep(taskId, t.name);
+        srpBtn.textContent = '✓ Reminder set';
+      });
+      extra.appendChild(srpBtn);
     }
   }
 
   if (mode === 'work') {
-    // Client tag
-    var clientVal = t.client || '';
-    extra.innerHTML += '<div style="display:flex;align-items:center;gap:6px;">' +
-      '<span style="font-family:Orbitron,sans-serif;font-size:7px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-muted);">Client</span>' +
-      '<input type="text" placeholder="Client name" value="' + esc(clientVal) + '" ' +
-        'style="background:rgba(15,32,39,0.8);border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:4px 10px;font-family:Exo 2,sans-serif;font-size:12px;color:var(--text);outline:none;width:120px;" ' +
-        'onchange="setTaskClient(\'' + taskId + '\',this.value)" />' +
-      '</div>';
-    // Meeting prep button
+    // Client input
+    var clientWrap = document.createElement('div');
+    clientWrap.style.cssText = 'display:flex;align-items:center;gap:6px;';
+    var clientLabel = document.createElement('span');
+    clientLabel.style.cssText = 'font-family:Orbitron,sans-serif;font-size:7px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-muted);';
+    clientLabel.textContent = 'Client';
+    var clientInput = document.createElement('input');
+    clientInput.type = 'text';
+    clientInput.placeholder = 'Client name';
+    clientInput.value = t.client || '';
+    clientInput.style.cssText = 'background:rgba(15,32,39,0.8);border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:4px 10px;font-family:"Exo 2",sans-serif;font-size:12px;color:var(--text);outline:none;width:120px;';
+    clientInput.addEventListener('change', function(){ setTaskClient(taskId, this.value); });
+    clientWrap.appendChild(clientLabel);
+    clientWrap.appendChild(clientInput);
+    extra.appendChild(clientWrap);
+
+    // Meeting prep
     if (t.name.toLowerCase().match(/meeting|call|sync|standup|review|presentation/)) {
-      extra.innerHTML += '<button class="spaced-rep-btn" id="meetingPrepBtn" onclick="generateMeetingPrep(\'' + taskId + '\')">📋 Meeting prep</button>';
+      var mpBtn = document.createElement('button');
+      mpBtn.className = 'spaced-rep-btn';
+      mpBtn.id = 'meetingPrepBtn';
+      mpBtn.textContent = '📋 Meeting prep';
+      mpBtn.addEventListener('click', function(){ generateMeetingPrep(taskId); });
+      extra.appendChild(mpBtn);
     }
   }
 
   if (mode === 'life') {
-    // Goal tag
-    var goalVal = t.goal || '';
-    extra.innerHTML += '<div style="display:flex;align-items:center;gap:6px;">' +
-      '<span style="font-family:Orbitron,sans-serif;font-size:7px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-muted);">Goal</span>' +
-      '<input type="text" placeholder="e.g. Get fit" value="' + esc(goalVal) + '" ' +
-        'style="background:rgba(15,32,39,0.8);border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:4px 10px;font-family:Exo 2,sans-serif;font-size:12px;color:var(--text);outline:none;width:110px;" ' +
-        'onchange="setTaskGoal(\'' + taskId + '\',this.value)" />' +
-      '</div>';
-    // Location tag
-    var locVal = t.location || '';
-    extra.innerHTML += '<div style="display:flex;align-items:center;gap:6px;">' +
-      '<span style="font-family:Orbitron,sans-serif;font-size:7px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-muted);">📍</span>' +
-      '<input type="text" placeholder="Location" value="' + esc(locVal) + '" ' +
-        'style="background:rgba(15,32,39,0.8);border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:4px 10px;font-family:Exo 2,sans-serif;font-size:12px;color:var(--text);outline:none;width:110px;" ' +
-        'onchange="setTaskLocation(\'' + taskId + '\',this.value)" />' +
-      '</div>';
+    // Goal input
+    var goalWrap = document.createElement('div');
+    goalWrap.style.cssText = 'display:flex;align-items:center;gap:6px;';
+    var goalLabel = document.createElement('span');
+    goalLabel.style.cssText = 'font-family:Orbitron,sans-serif;font-size:7px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-muted);';
+    goalLabel.textContent = 'Goal';
+    var goalInput = document.createElement('input');
+    goalInput.type = 'text';
+    goalInput.placeholder = 'e.g. Get fit';
+    goalInput.value = t.goal || '';
+    goalInput.style.cssText = 'background:rgba(15,32,39,0.8);border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:4px 10px;font-family:"Exo 2",sans-serif;font-size:12px;color:var(--text);outline:none;width:110px;';
+    goalInput.addEventListener('change', function(){ setTaskGoal(taskId, this.value); });
+    goalWrap.appendChild(goalLabel);
+    goalWrap.appendChild(goalInput);
+    extra.appendChild(goalWrap);
+
+    // Location input
+    var locWrap = document.createElement('div');
+    locWrap.style.cssText = 'display:flex;align-items:center;gap:6px;';
+    var locLabel = document.createElement('span');
+    locLabel.style.cssText = 'font-family:Orbitron,sans-serif;font-size:7px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-muted);';
+    locLabel.textContent = '📍';
+    var locInput = document.createElement('input');
+    locInput.type = 'text';
+    locInput.placeholder = 'Location';
+    locInput.value = t.location || '';
+    locInput.style.cssText = 'background:rgba(15,32,39,0.8);border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:4px 10px;font-family:"Exo 2",sans-serif;font-size:12px;color:var(--text);outline:none;width:110px;';
+    locInput.addEventListener('change', function(){ setTaskLocation(taskId, this.value); });
+    locWrap.appendChild(locLabel);
+    locWrap.appendChild(locInput);
+    extra.appendChild(locWrap);
   }
 
-  if (extra.innerHTML) el.appendChild(extra);
+  if (extra.children.length) el.appendChild(extra);
 }
 
 // ── Hook renderModePanel into render() and switchProject() ──
